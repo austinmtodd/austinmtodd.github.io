@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectMetadata from '../../components/ProjectMetadata.astro';
 import ProjectThesis from '../../components/ProjectThesis.astro';
+import AtAGlance from '../../components/AtAGlance.astro';
 import CaseStudyNav from '../../components/CaseStudyNav.astro';
 import ArtifactFrame from '../../components/ArtifactFrame.astro';
 import Placeholder from '../../components/Placeholder.astro';
@@ -50,6 +51,19 @@ const sections = [
       />
     </div>
 
+    <div class="wrap">
+      <div class="col-reading case-glance">
+        <AtAGlance
+          items={[
+            { label: 'The gap', text: 'Teams and leadership each needed different views, and every report was rebuilt from scratch.' },
+            { label: 'The move', text: 'One underlying Airtable model feeding audience-specific views, standardized before automating.' },
+            { label: 'What shipped', text: 'Centralized tracking, leadership-ready views, and refined automation.' },
+            { label: 'Still unverified', text: 'Usage frequency, time savings, or downstream product and customer impact.' },
+          ]}
+        />
+      </div>
+    </div>
+
     <div class="wrap case-body">
       <div class="col-reading">
         <CaseStudyNav sections={sections} />
@@ -58,9 +72,9 @@ const sections = [
       <section id="situation" class="col-reading case-section" aria-labelledby="situation-heading">
         <h2 id="situation-heading" class="case-section__heading">The situation</h2>
         <p>
-          Mouser's accessibility work generated information through audits, product-team activity,
-          and monitoring. But reporting that information consistently required ongoing
-          organization and translation.
+          The organization's accessibility work generated information through audits,
+          product-team activity, and monitoring. But reporting that information consistently
+          required ongoing organization and translation.
         </p>
         <p>
           Product teams needed enough specificity to act. Leadership needed a clearer view of
@@ -312,6 +326,10 @@ const sections = [
 <style>
   .case-opening {
     padding-block: var(--space-6) var(--space-4);
+  }
+
+  .case-glance {
+    margin-top: var(--space-4);
   }
 
   .case-opening__eyebrow {

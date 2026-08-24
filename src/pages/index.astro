@@ -48,8 +48,8 @@ import ContactCTA from '../components/ContactCTA.astro';
     >
       <Fragment slot="description">
         <p>
-          Mouser needed more than accessibility requirements. Product teams needed shared
-          decisions about testing, ownership, evidence, escalation, and exceptions.
+          The organization needed more than accessibility requirements. Product teams needed
+          shared decisions about testing, ownership, evidence, escalation, and exceptions.
         </p>
         <p>
           I helped structure and facilitate a cross-functional initiative that moved those
@@ -62,17 +62,22 @@ import ContactCTA from '../components/ContactCTA.astro';
           statusTone="placeholder"
           caption="Conceptual reconstruction of the shift from a broad accessibility commitment to an operating model with defined ownership, testing, decisions, escalation, and exceptions. Not an original deliverable."
         >
-          <div class="diagram diagram--standards">
-            <div class="diagram__node diagram__node--source">Broad commitment</div>
-            <div class="diagram__connector" aria-hidden="true"></div>
-            <ul class="diagram__row">
-              <li class="diagram__node">Ownership</li>
-              <li class="diagram__node">Testing</li>
-              <li class="diagram__node">Decisions</li>
-              <li class="diagram__node">Escalation</li>
-              <li class="diagram__node">Exceptions</li>
-            </ul>
-            <p class="diagram__label">Operating model</p>
+          <div class="diagram-split">
+            <div class="diagram-split__col">
+              <p class="diagram-split__label">Starting point</p>
+              <div class="diagram__node diagram__node--source">Broad commitment</div>
+            </div>
+            <div class="diagram-split__divider" aria-hidden="true"></div>
+            <div class="diagram-split__col">
+              <p class="diagram-split__label">Operating model</p>
+              <ul class="diagram__row">
+                <li class="diagram__node">Ownership</li>
+                <li class="diagram__node">Testing</li>
+                <li class="diagram__node">Decisions</li>
+                <li class="diagram__node">Escalation</li>
+                <li class="diagram__node">Exceptions</li>
+              </ul>
+            </div>
           </div>
         </ArtifactFrame>
       </Fragment>
@@ -102,19 +107,23 @@ import ContactCTA from '../components/ContactCTA.astro';
         <ArtifactFrame
           status="Anonymized reconstruction"
           statusTone="placeholder"
-          caption="Anonymized reconstruction of the proposed measurement framework: three experience signals related to two business outcomes. No Mouser branding or internal values."
+          caption="Anonymized reconstruction of the proposed measurement framework: three experience signals related to two business outcomes. No employer branding or internal values."
         >
           <div class="diagram diagram--metrics">
-            <ul class="diagram__row">
-              <li class="diagram__node diagram__node--blue">Satisfaction</li>
-              <li class="diagram__node diagram__node--blue">Perceived effort</li>
-              <li class="diagram__node diagram__node--blue">Task success</li>
-            </ul>
-            <div class="diagram__connector" aria-hidden="true"></div>
-            <ul class="diagram__row">
-              <li class="diagram__node diagram__node--clay">Conversion rate</li>
-              <li class="diagram__node diagram__node--clay">Transaction value</li>
-            </ul>
+            <div class="diagram-group diagram-group--blue">
+              <ul class="diagram__row">
+                <li class="diagram__node diagram__node--blue">Satisfaction</li>
+                <li class="diagram__node diagram__node--blue">Perceived effort</li>
+                <li class="diagram__node diagram__node--blue">Task success</li>
+              </ul>
+            </div>
+            <p class="diagram__label">related to</p>
+            <div class="diagram-group diagram-group--clay">
+              <ul class="diagram__row">
+                <li class="diagram__node diagram__node--clay">Conversion rate</li>
+                <li class="diagram__node diagram__node--clay">Transaction value</li>
+              </ul>
+            </div>
           </div>
         </ArtifactFrame>
       </Fragment>
@@ -147,8 +156,11 @@ import ContactCTA from '../components/ContactCTA.astro';
         >
           <div class="diagram diagram--reporting">
             <div class="diagram__node diagram__node--source">Shared information model</div>
-            <div class="diagram__connector" aria-hidden="true"></div>
-            <ul class="diagram__row">
+            <div class="diagram-branch" aria-hidden="true">
+              <span class="diagram-branch__stem"></span>
+              <span class="diagram-branch__bar"></span>
+            </div>
+            <ul class="diagram__row diagram__row--spread">
               <li class="diagram__node">Team view</li>
               <li class="diagram__node">Leadership view</li>
             </ul>
@@ -338,14 +350,93 @@ import ContactCTA from '../components/ContactCTA.astro';
     color: var(--color-clay-strong);
   }
 
-  .diagram__connector {
-    width: 1px;
-    height: var(--space-3);
-    background: var(--color-border);
-  }
-
   .diagram__label {
     font-size: var(--step-meta);
     color: var(--color-text-secondary);
+    font-style: italic;
+  }
+
+  .diagram__row--spread {
+    gap: var(--space-4);
+  }
+
+  /* Standards diagram: a horizontal before/after split rather than a
+     top-down fan, distinct from the other two homepage diagrams. */
+  .diagram-split {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    width: 100%;
+  }
+
+  .diagram-split__col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    flex: 1;
+  }
+
+  .diagram-split__label {
+    font-size: var(--step-meta);
+    color: var(--color-text-secondary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .diagram-split__divider {
+    width: 1px;
+    align-self: stretch;
+    background: var(--color-border);
+  }
+
+  @media (max-width: 900px) {
+    .diagram-split {
+      flex-direction: column;
+    }
+
+    .diagram-split__divider {
+      width: 60%;
+      height: 1px;
+      align-self: center;
+    }
+  }
+
+  /* Metrics diagram: two bracketed groups rather than stacked rows,
+     reinforcing that each set of nodes is one category. */
+  .diagram-group {
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-2);
+  }
+
+  .diagram-group--blue {
+    border-color: var(--color-blue);
+  }
+
+  .diagram-group--clay {
+    border-color: var(--color-clay-strong);
+  }
+
+  /* Reporting diagram: a T-shaped branch instead of a single connector
+     line, reading as one source feeding two distinct views. */
+  .diagram-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .diagram-branch__stem {
+    width: 1px;
+    height: var(--space-2);
+    background: var(--color-border);
+  }
+
+  .diagram-branch__bar {
+    width: 70%;
+    max-width: 8rem;
+    height: 1px;
+    background: var(--color-border);
   }
 </style>

@@ -1,0 +1,75 @@
+---
+// Scan-friendly summary near the top of a case study, for a reader who
+// won't make it through the full narrative. Each item restates something
+// already established in the body copy — nothing new is claimed here.
+interface Item {
+  label: string;
+  text: string;
+}
+
+interface Props {
+  items: Item[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="at-a-glance" role="group" aria-label="Case study at a glance">
+  <p class="at-a-glance__heading">At a glance</p>
+  <ul class="at-a-glance__list">
+    {items.map((item) => (
+      <li class="at-a-glance__item">
+        <span class="at-a-glance__label">{item.label}</span>
+        <span class="at-a-glance__text">{item.text}</span>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .at-a-glance {
+    border: var(--border-thin);
+    border-radius: var(--radius-md);
+    background: var(--color-blue-field);
+    padding: var(--space-3);
+  }
+
+  .at-a-glance__heading {
+    font-size: var(--step-meta);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-blue);
+    margin-bottom: var(--space-2);
+  }
+
+  .at-a-glance__list {
+    list-style: none;
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .at-a-glance__item {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr;
+    gap: var(--space-2);
+  }
+
+  .at-a-glance__label {
+    font-weight: 700;
+    font-size: var(--step-meta);
+    color: var(--color-text);
+  }
+
+  .at-a-glance__text {
+    color: var(--color-text-secondary);
+    font-size: var(--step-meta);
+  }
+
+  @media (max-width: 479px) {
+    .at-a-glance__item {
+      grid-template-columns: 1fr;
+      gap: 0.25rem;
+    }
+  }
+</style>

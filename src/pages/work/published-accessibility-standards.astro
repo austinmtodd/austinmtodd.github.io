@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectMetadata from '../../components/ProjectMetadata.astro';
 import ProjectThesis from '../../components/ProjectThesis.astro';
+import AtAGlance from '../../components/AtAGlance.astro';
 import CaseStudyNav from '../../components/CaseStudyNav.astro';
 import DecisionRecord from '../../components/DecisionRecord.astro';
 import ArtifactFrame from '../../components/ArtifactFrame.astro';
@@ -49,6 +50,19 @@ const sections = [
       />
     </div>
 
+    <div class="wrap">
+      <div class="col-reading case-glance">
+        <AtAGlance
+          items={[
+            { label: 'The gap', text: 'No shared model for who tests what, when, or how exceptions get handled.' },
+            { label: 'The move', text: 'Decision-focused workshops plus an asynchronous decision tracker to keep unresolved questions moving.' },
+            { label: 'What shipped', text: 'Published standards backed by governance, responsibility, and exception structures.' },
+            { label: 'Still unverified', text: 'Universal adoption, workflow compliance, defect reduction, or customer impact.' },
+          ]}
+        />
+      </div>
+    </div>
+
     <div class="wrap case-body">
       <div class="col-reading">
         <CaseStudyNav sections={sections} />
@@ -57,8 +71,8 @@ const sections = [
       <section id="challenge" class="col-reading case-section" aria-labelledby="challenge-heading">
         <h2 id="challenge-heading" class="case-section__heading">The challenge</h2>
         <p>
-          Mouser had committed to improving the accessibility of its web experience, but teams did
-          not yet share an operating model for putting that commitment into practice.
+          The organization had committed to improving the accessibility of its web experience, but
+          teams did not yet share an operating model for putting that commitment into practice.
         </p>
         <p>Important questions remained unresolved:</p>
         <ul class="case-list">
@@ -382,6 +396,10 @@ const sections = [
 <style>
   .case-opening {
     padding-block: var(--space-6) var(--space-4);
+  }
+
+  .case-glance {
+    margin-top: var(--space-4);
   }
 
   .case-opening__eyebrow {

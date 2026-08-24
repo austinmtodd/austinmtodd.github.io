@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectMetadata from '../../components/ProjectMetadata.astro';
 import ProjectThesis from '../../components/ProjectThesis.astro';
+import AtAGlance from '../../components/AtAGlance.astro';
 import CaseStudyNav from '../../components/CaseStudyNav.astro';
 import ArtifactFrame from '../../components/ArtifactFrame.astro';
 import BeforeAfter from '../../components/BeforeAfter.astro';
@@ -49,6 +50,19 @@ const sections = [
       />
     </div>
 
+    <div class="wrap">
+      <div class="col-reading case-glance">
+        <AtAGlance
+          items={[
+            { label: 'The gap', text: 'Conversion could look fine while the experience behind it still felt confusing or effortful.' },
+            { label: 'The move', text: 'Three UX signals (satisfaction, effort, task success) paired with conversion and order value, plus a rebuilt satisfaction question.' },
+            { label: 'What shipped', text: 'A framework and phased pilot proposal, positively received by UX leadership.' },
+            { label: 'Still unverified', text: 'The framework has not been piloted or operationalized.' },
+          ]}
+        />
+      </div>
+    </div>
+
     <div class="wrap case-body">
       <div class="col-reading">
         <CaseStudyNav sections={sections} />
@@ -64,7 +78,7 @@ const sections = [
       <section id="problem" class="col-reading case-section" aria-labelledby="problem-heading">
         <h2 id="problem-heading" class="case-section__heading">The problem</h2>
         <p>
-          UX influenced important journeys across Mouser's product ecosystem, but the organization
+          UX influenced important journeys across the organization's product ecosystem, but it
           lacked a consistent way to measure and communicate the quality of those experiences.
         </p>
         <p>
@@ -308,6 +322,10 @@ const sections = [
 <style>
   .case-opening {
     padding-block: var(--space-6) var(--space-4);
+  }
+
+  .case-glance {
+    margin-top: var(--space-4);
   }
 
   .case-opening__eyebrow {
