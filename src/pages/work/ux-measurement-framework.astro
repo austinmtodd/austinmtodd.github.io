@@ -1,0 +1,446 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectMetadata from '../../components/ProjectMetadata.astro';
+import ProjectThesis from '../../components/ProjectThesis.astro';
+import CaseStudyNav from '../../components/CaseStudyNav.astro';
+import ArtifactFrame from '../../components/ArtifactFrame.astro';
+import BeforeAfter from '../../components/BeforeAfter.astro';
+import Callout from '../../components/Callout.astro';
+import EvidenceLimitation from '../../components/EvidenceLimitation.astro';
+import OutcomeSummary from '../../components/OutcomeSummary.astro';
+import PrevNext from '../../components/PrevNext.astro';
+
+const sections = [
+  { id: 'problem', label: 'The problem' },
+  { id: 'framework', label: 'Designing the framework' },
+  { id: 'evidence', label: 'Challenging the evidence' },
+  { id: 'implementation', label: 'Planning implementation' },
+  { id: 'result', label: 'The result' },
+  { id: 'reflection', label: 'Reflection' },
+];
+---
+
+<BaseLayout
+  title="UX Measurement Strategy Case Study — Austin Todd"
+  description="How Austin Todd co-developed a framework connecting satisfaction, effort, task success, behavior, and business outcomes."
+>
+  <article>
+    <header class="wrap case-opening">
+      <div class="col-reading">
+        <p class="case-opening__eyebrow">Case study 02 · Measurement strategy</p>
+        <h1 class="case-opening__title">Making UX impact measurable</h1>
+        <ProjectThesis>
+          Chloe and I developed a framework connecting experience quality to product behavior and
+          business outcomes.
+        </ProjectThesis>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <ProjectMetadata
+        items={[
+          { label: 'Role', value: 'Co-strategist and proposal co-author' },
+          { label: 'Collaborator', value: 'Senior UX researcher' },
+          { label: 'Audience', value: 'UX leadership' },
+          { label: 'Status', value: 'Presented with positive leadership reception; not yet operationalized' },
+          { label: 'Scope', value: 'Satisfaction, perceived effort, task success, conversion, and transaction value' },
+          { label: 'Date', value: 'May 2026' },
+        ]}
+      />
+    </div>
+
+    <div class="wrap case-body">
+      <div class="col-reading">
+        <CaseStudyNav sections={sections} />
+
+        <EvidenceLimitation heading="Confidentiality note">
+          <p>
+            The original proposal contained confidential company information. Visuals on this page
+            are anonymized reconstructions of the underlying reasoning and framework.
+          </p>
+        </EvidenceLimitation>
+      </div>
+
+      <section id="problem" class="col-reading case-section" aria-labelledby="problem-heading">
+        <h2 id="problem-heading" class="case-section__heading">The problem</h2>
+        <p>
+          UX influenced important journeys across Mouser's product ecosystem, but the organization
+          lacked a consistent way to measure and communicate the quality of those experiences.
+        </p>
+        <p>
+          Existing measures could show what users did and whether the business achieved an
+          outcome. They could not consistently show how users experienced the journey.
+        </p>
+        <p>
+          A customer might complete a purchase while still encountering confusion or unnecessary
+          effort. Conversion would record success, but it would not reveal the quality of the
+          experience that produced it.
+        </p>
+        <p>This left several gaps:</p>
+        <ul class="case-list">
+          <li>UX impact was difficult to communicate consistently.</li>
+          <li>Prioritization could rely too heavily on assumptions.</li>
+          <li>Experience quality could not be compared across important journeys.</li>
+          <li>Problems might become visible only after affecting downstream performance.</li>
+          <li>
+            UX risked being understood as supportive rather than strategic because its
+            contribution was not consistently visible.
+          </li>
+        </ul>
+        <p>
+          We proposed adding an experience-measurement layer to complement—not replace—the product
+          and business metrics already being defined.
+        </p>
+      </section>
+
+      <section id="framework" class="col-reading case-section" aria-labelledby="framework-heading">
+        <h2 id="framework-heading" class="case-section__heading">Designing a multidimensional framework</h2>
+        <p>
+          We rejected the idea that one universal UX score could represent experience quality.
+        </p>
+        <p>Instead, we proposed three complementary UX signals:</p>
+        <dl class="signal-list">
+          <div>
+            <dt>Satisfaction</dt>
+            <dd>
+              A website-specific satisfaction measure would capture how customers felt about the
+              digital experience overall.
+            </dd>
+          </div>
+          <div>
+            <dt>Perceived effort</dt>
+            <dd>
+              Single Ease Questions placed after important tasks would reveal how easy or
+              difficult those journeys felt.
+            </dd>
+          </div>
+          <div>
+            <dt>Task success</dt>
+            <dd>Task-success rate would establish whether customers could complete critical activities.</dd>
+          </div>
+        </dl>
+        <p>These measures answered different questions:</p>
+        <ul class="case-list">
+          <li>Did the experience work?</li>
+          <li>How difficult did it feel?</li>
+          <li>How did customers feel about it overall?</li>
+        </ul>
+        <p>
+          We paired those experience signals with conversion rate and average order value. The
+          intent was not to claim that UX alone caused changes in commercial performance. It was
+          to create an evidence system through which relationships between experience quality,
+          user behavior, and business outcomes could be investigated.
+        </p>
+        <p>The framework could help teams identify situations such as:</p>
+        <ul class="case-list">
+          <li>Users completing a task but finding it difficult</li>
+          <li>A journey feeling easy without producing the intended outcome</li>
+          <li>Overall satisfaction concealing friction in a specific workflow</li>
+          <li>
+            Accessibility barriers affecting experience quality even when aggregate business
+            measures remained positive
+          </li>
+        </ul>
+      </section>
+
+      <div class="col-wide case-artifact">
+        <ArtifactFrame
+          status="Anonymized reconstruction"
+          statusTone="placeholder"
+          caption="Anonymized framework diagram: three experience signals related to two business outcomes. Relational grouping, not one-directional arrows implying causality."
+        >
+          <div class="diagram">
+            <ul class="diagram__row">
+              <li class="diagram__node diagram__node--blue">Satisfaction</li>
+              <li class="diagram__node diagram__node--blue">Perceived effort</li>
+              <li class="diagram__node diagram__node--blue">Task success</li>
+            </ul>
+            <p class="diagram__label">related to</p>
+            <div class="diagram__connector" aria-hidden="true"></div>
+            <ul class="diagram__row">
+              <li class="diagram__node diagram__node--clay">Conversion rate</li>
+              <li class="diagram__node diagram__node--clay">Average order value</li>
+            </ul>
+          </div>
+        </ArtifactFrame>
+      </div>
+
+      <section id="evidence" class="col-reading case-section" aria-labelledby="evidence-heading">
+        <h2 id="evidence-heading" class="case-section__heading">Challenging the evidence already available</h2>
+        <p>
+          An existing website survey appeared to offer a satisfaction signal, but we did not
+          assume that an available metric was automatically a reliable one.
+        </p>
+        <p>Our review identified several problems:</p>
+        <ul class="case-list">
+          <li>The response scale included more positive than negative options.</li>
+          <li>It lacked a clear neutral midpoint.</li>
+          <li>Labels could be interpreted inconsistently.</li>
+          <li>Positive wording could bias responses.</li>
+          <li>Response rates had declined over time.</li>
+          <li>Lower participation increased the risk of non-response bias.</li>
+          <li>The question measured general quality more clearly than satisfaction.</li>
+        </ul>
+        <p>These concerns weakened confidence in the score as a strategic UX measure.</p>
+        <p>
+          Instead of incorporating it into the framework, we proposed a dedicated
+          website-satisfaction question with a balanced response scale and a clearer construct.
+        </p>
+      </section>
+
+      <div class="col-reading">
+        <Callout>
+          Measurement strategy is not the process of collecting more numbers. It is the process of
+          deciding which evidence is trustworthy enough to guide action.
+        </Callout>
+      </div>
+
+      <div class="col-wide case-artifact">
+        <ArtifactFrame
+          status="Conceptual illustration"
+          statusTone="placeholder"
+          caption="Generic comparison of an unbalanced quality scale against a balanced satisfaction scale. No original company wording, values, response totals, or charts."
+        >
+          <BeforeAfter beforeLabel="Unbalanced quality scale" afterLabel="Balanced satisfaction scale">
+            <Fragment slot="before">
+              <ul>
+                <li>More positive options than negative</li>
+                <li>No clear neutral midpoint</li>
+                <li>Inconsistently interpreted labels</li>
+                <li>Positively worded prompt</li>
+              </ul>
+            </Fragment>
+            <Fragment slot="after">
+              <ul>
+                <li>Equal positive and negative options</li>
+                <li>Clear neutral midpoint</li>
+                <li>Consistent, specific labels</li>
+                <li>Neutral, satisfaction-specific wording</li>
+              </ul>
+            </Fragment>
+          </BeforeAfter>
+        </ArtifactFrame>
+      </div>
+
+      <section id="implementation" class="col-reading case-section" aria-labelledby="implementation-heading">
+        <h2 id="implementation-heading" class="case-section__heading">Planning for implementation</h2>
+        <p>The proposal addressed:</p>
+        <ul class="case-list">
+          <li>Technical instrumentation across selected journeys</li>
+          <li>Adequate response rates and sampling quality</li>
+          <li>Privacy and ethical considerations</li>
+          <li>Alignment with emerging product metrics</li>
+          <li>Shared ownership across UX, Product, and customer-experience teams</li>
+          <li>Consistent implementation and governance</li>
+        </ul>
+        <p>We recommended beginning with a focused pilot rather than an immediate organization-wide rollout.</p>
+        <p>The pilot would:</p>
+        <ol class="case-list case-list--ordered">
+          <li>Align stakeholders around the framework.</li>
+          <li>Select a small number of important journeys.</li>
+          <li>Validate instrumentation, privacy, and data-quality requirements.</li>
+          <li>Test whether the measures produced reliable and actionable evidence.</li>
+          <li>Refine the framework before expanding it.</li>
+        </ol>
+        <p>
+          This allowed the organization to test the strategic concept under real conditions before
+          committing to scale.
+        </p>
+      </section>
+
+      <section id="result" class="col-reading case-section" aria-labelledby="result-heading">
+        <h2 id="result-heading" class="case-section__heading">The result</h2>
+        <p>We presented the proposal to UX leadership, where it was positively received.</p>
+        <p>The work produced:</p>
+        <ul class="case-list">
+          <li>A diagnosis of the organization's UX-measurement gap</li>
+          <li>A unified model connecting experience and business signals</li>
+          <li>An evidence-based critique of the existing satisfaction measure</li>
+          <li>Implementation principles and known risks</li>
+          <li>A phased pilot recommendation</li>
+        </ul>
+        <p>
+          The framework has not yet been piloted or operationalized. Chloe's departure interrupted
+          the transition from proposal to implementation, leaving ownership of the next phase
+          unresolved.
+        </p>
+      </section>
+
+      <div class="col-reading case-outcome">
+        <OutcomeSummary
+          verified="A developed strategic framework, leadership presentation, positive reception, and pilot recommendation."
+          unverifiedLabel="Not implemented"
+          unverified="Instrumentation, pilot, recurring reporting, or demonstrated business impact."
+        />
+      </div>
+
+      <section id="reflection" class="col-reading case-section case-section--reflection" aria-labelledby="reflection-heading">
+        <h2 id="reflection-heading" class="case-section__heading">Reflection</h2>
+        <ProjectThesis>
+          Metrics become strategically useful only when they measure a clear concept, are
+          collected reliably, have an owner, and appear in a recurring decision.
+        </ProjectThesis>
+        <p>
+          This project established the measurement logic. Operationalizing it would require a
+          second layer of design: ownership, instrumentation, governance, and routines that help
+          teams act on the results.
+        </p>
+      </section>
+    </div>
+
+    <div class="wrap">
+      <PrevNext
+        prev={{
+          label: 'Previous case study',
+          title: 'Turning an accessibility commitment into published standards',
+          href: '/work/published-accessibility-standards',
+        }}
+        next={{
+          label: 'Next case study',
+          title: 'Designing a shared view of accessibility progress',
+          href: '/work/accessibility-reporting-system',
+        }}
+      />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .case-opening {
+    padding-block: var(--space-6) var(--space-4);
+  }
+
+  .case-opening__eyebrow {
+    font-size: var(--step-meta);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-blue);
+    margin-bottom: var(--space-3);
+  }
+
+  .case-opening__title {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: var(--step-case-title);
+    line-height: 1.1;
+    margin-bottom: var(--space-4);
+  }
+
+  .case-body {
+    padding-top: var(--space-5);
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .case-body > .col-reading {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .case-section {
+    display: grid;
+    gap: var(--space-3);
+    color: var(--color-text);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  .case-section > p,
+  .case-section > ul,
+  .case-section > ol {
+    color: var(--color-text-secondary);
+  }
+
+  .case-section__heading {
+    font-size: var(--step-section);
+    color: var(--color-text);
+    margin-bottom: var(--space-1);
+  }
+
+  .case-section--reflection .case-section__heading {
+    font-family: var(--font-serif);
+  }
+
+  .case-list {
+    list-style: disc;
+    padding-left: 1.4em;
+    display: grid;
+    gap: 0.5em;
+  }
+
+  .case-list--ordered {
+    list-style: decimal;
+  }
+
+  .signal-list {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .signal-list dt {
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .signal-list dd {
+    margin: 0;
+    color: var(--color-text-secondary);
+  }
+
+  .case-artifact,
+  .case-outcome {
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    width: 100%;
+  }
+
+  .diagram__row {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2);
+  }
+
+  .diagram__node {
+    border: var(--border-thin);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    padding: 0.6em 0.9em;
+    font-size: var(--step-meta);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .diagram__node--blue {
+    background: var(--color-blue-field);
+    border-color: var(--color-blue);
+    color: var(--color-blue);
+  }
+
+  .diagram__node--clay {
+    background: var(--color-clay-field);
+    border-color: var(--color-clay-strong);
+    color: var(--color-clay-strong);
+  }
+
+  .diagram__connector {
+    width: 1px;
+    height: var(--space-3);
+    background: var(--color-border);
+  }
+
+  .diagram__label {
+    font-size: var(--step-meta);
+    color: var(--color-text-secondary);
+    font-style: italic;
+  }
+</style>

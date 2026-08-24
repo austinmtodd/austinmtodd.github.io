@@ -1,0 +1,77 @@
+---
+interface Section {
+  id: string;
+  label: string;
+}
+
+interface Props {
+  sections: Section[];
+}
+
+const { sections } = Astro.props;
+---
+
+<nav aria-label="Case study sections" class="case-nav">
+  <p class="case-nav__label" id="case-nav-label">On this page</p>
+  <ul class="case-nav__list" aria-labelledby="case-nav-label">
+    {sections.map((section) => (
+      <li>
+        <a href={`#${section.id}`}>{section.label}</a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  .case-nav {
+    border: var(--border-thin);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    padding: var(--space-2) var(--space-3);
+    margin-bottom: var(--space-5);
+  }
+
+  .case-nav__label {
+    font-size: var(--step-meta);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-secondary);
+    padding-block: var(--space-1);
+  }
+
+  .case-nav__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-3);
+    padding-bottom: var(--space-1);
+  }
+
+  .case-nav__list a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: var(--step-meta);
+    font-weight: 600;
+    color: var(--color-blue);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+
+  .case-nav__list a:hover {
+    border-bottom-color: var(--color-blue);
+  }
+
+  /* Restrained sticky behavior only where there's room for it to make
+     sense (wide viewports). At narrower widths it stays in normal flow
+     as a simple table of contents near the case-study opening. */
+  @media (min-width: 1000px) {
+    .case-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: none;
+    }
+  }
+</style>

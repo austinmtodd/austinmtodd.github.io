@@ -1,0 +1,87 @@
+---
+interface Props {
+  beforeLabel: string;
+  afterLabel: string;
+  title?: string;
+}
+
+const { beforeLabel, afterLabel, title } = Astro.props;
+---
+
+<div class="before-after">
+  {title && <p class="before-after__title">{title}</p>}
+  <div class="before-after__grid">
+    <div class="before-after__col before-after__col--before">
+      <p class="before-after__label">{beforeLabel}</p>
+      <div class="before-after__content">
+        <slot name="before" />
+      </div>
+    </div>
+    <div class="before-after__col before-after__col--after">
+      <p class="before-after__label">{afterLabel}</p>
+      <div class="before-after__content">
+        <slot name="after" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .before-after {
+    border: var(--border-thin);
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+    background: var(--color-surface);
+  }
+
+  .before-after__title {
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+  }
+
+  .before-after__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  .before-after__col {
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+  }
+
+  .before-after__col--before {
+    background: var(--color-clay-field);
+  }
+
+  .before-after__col--after {
+    background: var(--color-blue-field);
+  }
+
+  .before-after__label {
+    font-size: var(--step-meta);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: var(--space-2);
+    color: var(--color-text);
+  }
+
+  .before-after__content {
+    font-size: var(--step-meta);
+    color: var(--color-text);
+  }
+
+  .before-after__content :global(ul) {
+    list-style: disc;
+    padding-left: 1.2em;
+    display: grid;
+    gap: 0.4em;
+  }
+
+  @media (max-width: 639px) {
+    .before-after__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

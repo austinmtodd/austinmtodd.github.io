@@ -1,0 +1,496 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectMetadata from '../../components/ProjectMetadata.astro';
+import ProjectThesis from '../../components/ProjectThesis.astro';
+import CaseStudyNav from '../../components/CaseStudyNav.astro';
+import DecisionRecord from '../../components/DecisionRecord.astro';
+import ArtifactFrame from '../../components/ArtifactFrame.astro';
+import Placeholder from '../../components/Placeholder.astro';
+import OutcomeSummary from '../../components/OutcomeSummary.astro';
+import PrevNext from '../../components/PrevNext.astro';
+
+const sections = [
+  { id: 'challenge', label: 'The challenge' },
+  { id: 'responsibility', label: 'My responsibility' },
+  { id: 'workshops', label: 'Decision workshops' },
+  { id: 'decision-system', label: 'Async decision system' },
+  { id: 'delivery-reality', label: 'Connecting to delivery' },
+  { id: 'produced', label: 'What it produced' },
+  { id: 'customer-experience', label: 'Customer experience' },
+  { id: 'reflection', label: 'Reflection' },
+];
+---
+
+<BaseLayout
+  title="Accessibility Governance and Standards Case Study — Austin Todd"
+  description="How Austin Todd helped a cross-functional group turn unresolved accessibility questions into a governance model and published organizational standards."
+>
+  <article>
+    <header class="wrap case-opening">
+      <div class="col-reading">
+        <p class="case-opening__eyebrow">Case study 01 · Organizational strategy and governance</p>
+        <h1 class="case-opening__title">Turning an accessibility commitment into published standards</h1>
+        <ProjectThesis>
+          I helped a cross-functional group define how accessibility would be governed, tested,
+          documented, and escalated across product teams.
+        </ProjectThesis>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <ProjectMetadata
+        items={[
+          { label: 'Role', value: 'Initiative co-owner, facilitator, and systems designer' },
+          { label: 'Collaborators', value: 'Accessibility, UX, development, QA, product, management, and leadership' },
+          { label: 'Outcome', value: 'Published organizational accessibility standards and supporting governance structures' },
+          { label: 'Scope', value: 'Governance, testing responsibilities, decision-making, measurement, escalation, and exceptions' },
+          { label: 'Timeframe', value: '[ADD EXACT TIMEFRAME]' },
+        ]}
+      />
+    </div>
+
+    <div class="wrap case-body">
+      <div class="col-reading">
+        <CaseStudyNav sections={sections} />
+      </div>
+
+      <section id="challenge" class="col-reading case-section" aria-labelledby="challenge-heading">
+        <h2 id="challenge-heading" class="case-section__heading">The challenge</h2>
+        <p>
+          Mouser had committed to improving the accessibility of its web experience, but teams did
+          not yet share an operating model for putting that commitment into practice.
+        </p>
+        <p>Important questions remained unresolved:</p>
+        <ul class="case-list">
+          <li>Who was responsible for each type of accessibility testing?</li>
+          <li>What kinds of product changes triggered manual testing?</li>
+          <li>When should testing occur?</li>
+          <li>How would teams demonstrate that it had been completed?</li>
+          <li>How should incomplete work be escalated?</li>
+          <li>
+            What happened when accessibility deadlines conflicted with dependencies or business
+            priorities?
+          </li>
+        </ul>
+        <p>
+          These questions crossed organizational boundaries. UX, development, QA, product,
+          accessibility specialists, and leadership each controlled a different part of the
+          answer.
+        </p>
+        <p>
+          The organization did not simply need more accessibility documentation. It needed a
+          system through which different teams could interpret, apply, and maintain shared
+          expectations.
+        </p>
+      </section>
+
+      <section id="responsibility" class="col-reading case-section" aria-labelledby="responsibility-heading">
+        <h2 id="responsibility-heading" class="case-section__heading">My responsibility</h2>
+        <p>
+          I worked with our accessibility subject-matter expert, Susan, and my manager, Joe, to
+          provide the day-to-day structure for the initiative.
+        </p>
+        <p>
+          Susan brought deep expertise in accessibility requirements. My role was to design the
+          process around that expertise: identify the decisions preventing progress, create ways
+          for stakeholders to contribute, facilitate discussion, document agreements, and help
+          translate them into governance and standards.
+        </p>
+        <p>I personally contributed by:</p>
+        <ul class="case-list">
+          <li>Structuring unresolved questions into decision-focused work</li>
+          <li>Designing and facilitating interactive Lucid workshops</li>
+          <li>Synthesizing stakeholder input and constraints</li>
+          <li>Helping develop governance and responsibility models</li>
+          <li>Introducing an asynchronous decision tracker</li>
+          <li>Connecting standards discussions to existing delivery workflows</li>
+          <li>Supporting the documentation that became the published standards</li>
+        </ul>
+        <p>
+          The standards were collaboratively developed. I did not act as the sole accessibility
+          authority or final decision-maker.
+        </p>
+      </section>
+
+      <section id="workshops" class="col-reading case-section" aria-labelledby="workshops-heading">
+        <h2 id="workshops-heading" class="case-section__heading">
+          I changed the meetings from discussion forums into decision workshops
+        </h2>
+        <p>
+          The initiative involved people with different responsibilities, expertise, and
+          incentives. Open discussion could reveal perspectives, but it did not reliably produce
+          clear agreements.
+        </p>
+        <p>
+          I designed interactive Lucid activities around specific questions the standards needed
+          to answer.
+        </p>
+        <p>
+          One workshop asked stakeholders to assign automated, guided, and advanced manual testing
+          to the roles they believed should own each activity. Participants first responded
+          independently, making areas of agreement and disagreement visible. I then facilitated
+          discussion around the differences.
+        </p>
+        <p>This surfaced a more complicated reality:</p>
+        <ul class="case-list">
+          <li>Developers could perform automated checks frequently.</li>
+          <li>Front-end developers already performed some manual checks related to their work.</li>
+          <li>QA was expected to provide more comprehensive testing.</li>
+          <li>Advanced testing depended on knowledge, licenses, and available capacity.</li>
+          <li>Not every team had a dedicated front-end specialist.</li>
+        </ul>
+        <p>
+          The operating model needed to reflect actual team conditions—not an idealized
+          development process. The workshop did more than collect preferences. It exposed the
+          organizational constraints the standards had to accommodate.
+        </p>
+      </section>
+
+      <div class="col-wide case-artifact">
+        <ArtifactFrame
+          status="Placeholder: source artifact needed"
+          statusTone="placeholder"
+          caption="Sanitized Lucid workshop excerpt: prompt, independent responses, area of disagreement, and resulting direction — with an explanation of what Austin designed versus what the group decided."
+        >
+          <Placeholder>
+            Sanitized Lucid workshop excerpt pending. This will show the testing-ownership prompt,
+            independent stakeholder responses, the disagreement it revealed, and the resulting
+            direction — not a fabricated reconstruction.
+          </Placeholder>
+        </ArtifactFrame>
+      </div>
+
+      <div class="col-reading case-decision">
+        <DecisionRecord
+          decision="Assign automated, guided, and advanced manual testing responsibility by activity type and actual team capability, not uniformly across roles."
+          evidence="Independent workshop responses exposed disagreement; discussion revealed developers could run automated checks frequently, front-end developers already performed some manual checks, QA was expected to provide more comprehensive testing, and advanced testing depended on knowledge, licenses, and capacity."
+          constraint="Not every team had a dedicated front-end specialist, and advanced-testing capacity varied by team."
+          direction="Build the operating model around actual team conditions rather than an idealized process."
+          status="agreed"
+        />
+      </div>
+
+      <section id="decision-system" class="col-reading case-section" aria-labelledby="decision-system-heading">
+        <h2 id="decision-system-heading" class="case-section__heading">
+          I designed a decision system when meetings became the bottleneck
+        </h2>
+        <p>
+          As the work progressed, the group accumulated more unresolved decisions than it could
+          address within the remaining meeting time.
+        </p>
+        <p>
+          Adding meetings would have increased the coordination burden without resolving the
+          underlying problem. We needed a way to preserve transparency and participation while
+          continuing to move.
+        </p>
+        <p>I helped create an asynchronous decision tracker. Each entry contained:</p>
+        <ul class="case-list">
+          <li>A focused decision question</li>
+          <li>Enough context to respond</li>
+          <li>A provisional or default direction</li>
+          <li>The stakeholders whose input was especially important</li>
+          <li>A response deadline</li>
+          <li>A place to provide concerns, reasoning, or an alternative</li>
+        </ul>
+        <p>
+          If no supported alternative was submitted by the deadline, the provisional decision
+          became the direction the group carried forward.
+        </p>
+        <p>
+          This changed the unit of participation. Instead of reopening an entire topic,
+          stakeholders could respond to a specific proposal, explain their concern, and recommend
+          an alternative.
+        </p>
+        <p>
+          The tracker did not replace collaborative discussion. It gave the initiative a practical
+          way to advance decisions that did not require a full meeting.
+        </p>
+      </section>
+
+      <div class="col-wide case-artifact">
+        <ArtifactFrame
+          status="Placeholder: source artifact needed"
+          statusTone="placeholder"
+          caption="One authentic decision-tracker entry — question, context, provisional direction, contributors, deadline, and status — sanitized rather than invented."
+        >
+          <Placeholder>
+            Decision tracker excerpt pending. A real entry will be recreated or sanitized here; no
+            decision will be invented in its place.
+          </Placeholder>
+        </ArtifactFrame>
+      </div>
+
+      <section id="delivery-reality" class="col-reading case-section" aria-labelledby="delivery-reality-heading">
+        <h2 id="delivery-reality-heading" class="case-section__heading">
+          I helped connect the standards to delivery reality
+        </h2>
+        <p>
+          The exception process forced the group to reconcile organizational expectations with
+          product-delivery constraints.
+        </p>
+        <p>
+          A team might understand the applicable standard and still be unable to meet its deadline
+          because of a technical dependency, competing priority, third-party system, or roadmap
+          decision.
+        </p>
+        <p>
+          The exception could not mean that accessibility was no longer required. It needed to
+          document why the timeline had changed, preserve visibility, and route priority conflicts
+          to the people authorized to make them.
+        </p>
+        <p>The group explored:</p>
+        <ul class="case-list">
+          <li>When teams should raise an exception</li>
+          <li>What information needed to be recorded</li>
+          <li>Who should review it</li>
+          <li>How leadership should gain visibility</li>
+          <li>How follow-up should occur</li>
+          <li>Whether exceptions should live in a separate reporting system or existing delivery tooling</li>
+        </ul>
+        <p>
+          A separate tool could simplify centralized reporting but create another disconnected
+          workflow. Capturing the information near the work could reduce duplication but required
+          a reliable escalation path.
+        </p>
+        <p>
+          We moved toward a process that kept the underlying accessibility work open, documented
+          the reason for the timeline conflict, and made the exception visible for product and
+          leadership discussion.
+        </p>
+        <p>
+          This distinguished an exception to the delivery timeline from an exception to the
+          accessibility expectation itself. The first could be managed transparently. The second
+          was not the purpose of the process.
+        </p>
+      </section>
+
+      <div class="col-wide case-artifact">
+        <ArtifactFrame
+          status="Anonymized reconstruction"
+          statusTone="placeholder"
+          caption="Anonymized reconstruction of the proposed exception flow: team, product owner or manager, leadership decision point, documentation, and follow-up loop. Directional only — confirm the final flow before treating any state as implemented."
+        >
+          <div class="flow">
+            <ol class="flow__steps">
+              <li class="flow__step">Team raises exception</li>
+              <li class="flow__step">Product owner / manager reviews</li>
+              <li class="flow__step">Leadership decision point</li>
+              <li class="flow__step">Documentation stays open</li>
+              <li class="flow__step">Follow-up loop</li>
+            </ol>
+          </div>
+        </ArtifactFrame>
+      </div>
+
+      <div class="col-reading case-decision">
+        <DecisionRecord
+          decision="An exception applies to the delivery timeline, never to the accessibility expectation itself."
+          evidence="Teams could understand a standard and still miss its deadline because of a technical dependency, competing priority, third-party system, or roadmap decision."
+          constraint="A separate tool could simplify centralized reporting but create a disconnected workflow; capturing information near the work required a reliable escalation path."
+          direction="Keep the underlying accessibility work open, document the reason for the timeline conflict, and make the exception visible to product and leadership."
+          status="proposed"
+        />
+      </div>
+
+      <section id="produced" class="col-reading case-section" aria-labelledby="produced-heading">
+        <h2 id="produced-heading" class="case-section__heading">What the work produced</h2>
+        <p>The initiative resulted in published accessibility standards supported by:</p>
+        <ul class="case-list">
+          <li>Defined testing expectations</li>
+          <li>More explicit role responsibilities</li>
+          <li>A governance structure</li>
+          <li>A mechanism for advancing unresolved decisions</li>
+          <li>A developing escalation and exception process</li>
+          <li>Documentation intended to connect standards to product delivery</li>
+        </ul>
+        <p>
+          Publication changed the state of the work from a collection of unresolved discussions to
+          a documented organizational direction.
+        </p>
+        <p>
+          It did not, by itself, prove complete adoption. The next measure of success is whether
+          teams can find, understand, apply, and maintain the standards—and whether the
+          organization can see where the operating model is working or breaking down.
+        </p>
+      </section>
+
+      <div class="col-reading case-outcome">
+        <OutcomeSummary
+          verified="Standards were published and supported by governance, responsibility, decision, and exception structures."
+          unverified="Universal adoption, workflow compliance, defect reduction, or customer impact."
+        />
+      </div>
+
+      <section id="customer-experience" class="col-reading case-section" aria-labelledby="customer-experience-heading">
+        <h2 id="customer-experience-heading" class="case-section__heading">
+          Why it mattered to the customer experience
+        </h2>
+        <p>
+          Customers do not experience an accessibility policy. They experience individual pages,
+          components, forms, and interactions produced by different teams over time.
+        </p>
+        <p>
+          If those teams use inconsistent testing practices or unclear ownership, experience
+          quality becomes dependent on who happened to work on a particular feature.
+        </p>
+        <p>
+          The governance model was intended to reduce that inconsistency by making accessibility
+          part of a shared delivery practice rather than relying exclusively on specialist
+          intervention.
+        </p>
+        <p>
+          We have not yet established evidence that the published standards improved customer
+          outcomes. That is an important distinction between the intended effect of the system and
+          its currently verified outcome.
+        </p>
+      </section>
+
+      <section id="reflection" class="col-reading case-section case-section--reflection" aria-labelledby="reflection-heading">
+        <h2 id="reflection-heading" class="case-section__heading">Reflection</h2>
+        <ProjectThesis>
+          This project changed how I think about standards and governance.
+        </ProjectThesis>
+        <p>
+          A standard is itself an experience. Its users need to understand what applies to them,
+          what they are responsible for, how to demonstrate completion, and what to do when
+          reality does not match the intended process.
+        </p>
+        <p>
+          Correct content is necessary, but it is not sufficient. The system surrounding the
+          standard determines whether an organizational commitment can become repeatable action.
+        </p>
+        <p>
+          My strongest contribution was designing that surrounding system: framing the necessary
+          decisions, creating structures for participation, and helping move the organization from
+          broad intention to published direction.
+        </p>
+      </section>
+    </div>
+
+    <div class="wrap">
+      <PrevNext
+        next={{
+          label: 'Next case study',
+          title: 'Making UX impact measurable',
+          href: '/work/ux-measurement-framework',
+        }}
+      />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .case-opening {
+    padding-block: var(--space-6) var(--space-4);
+  }
+
+  .case-opening__eyebrow {
+    font-size: var(--step-meta);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-blue);
+    margin-bottom: var(--space-3);
+  }
+
+  .case-opening__title {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: var(--step-case-title);
+    line-height: 1.1;
+    margin-bottom: var(--space-4);
+  }
+
+  .case-body {
+    padding-top: var(--space-5);
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .case-section {
+    display: grid;
+    gap: var(--space-3);
+    color: var(--color-text);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  .case-section > p,
+  .case-section > ul {
+    color: var(--color-text-secondary);
+  }
+
+  .case-section__heading {
+    font-size: var(--step-section);
+    color: var(--color-text);
+    margin-bottom: var(--space-1);
+  }
+
+  .case-section--reflection .case-section__heading {
+    font-family: var(--font-serif);
+  }
+
+  .case-list {
+    list-style: disc;
+    padding-left: 1.4em;
+    display: grid;
+    gap: 0.5em;
+  }
+
+  .case-artifact,
+  .case-decision,
+  .case-outcome {
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .flow {
+    width: 100%;
+  }
+
+  .flow__steps {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    counter-reset: step;
+  }
+
+  .flow__step {
+    border: var(--border-thin);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    padding: 0.6em 0.9em;
+    font-size: var(--step-meta);
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+  }
+
+  .flow__step:not(:last-child)::after {
+    content: '';
+    display: inline-block;
+    width: var(--space-3);
+    height: 1px;
+    background: var(--color-border);
+    margin-left: var(--space-2);
+    vertical-align: middle;
+  }
+
+  @media (max-width: 767px) {
+    .flow__steps {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .flow__step:not(:last-child)::after {
+      display: none;
+    }
+
+    .flow__step:not(:last-child) {
+      margin-bottom: var(--space-1);
+    }
+  }
+</style>

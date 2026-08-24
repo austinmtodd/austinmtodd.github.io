@@ -1,0 +1,91 @@
+---
+import StatusLabel from './StatusLabel.astro';
+
+// Artifact frame + caption + status label, per the brief's artifact-status
+// vocabulary: Original artifact, Sanitized original, Anonymized
+// reconstruction, Conceptual illustration, Placeholder: source artifact needed.
+type StatusTone = 'verified' | 'progress' | 'placeholder' | 'neutral';
+
+interface Props {
+  status: string;
+  statusTone?: StatusTone;
+  caption: string;
+  longDescription?: string;
+  wide?: boolean;
+}
+
+const { status, statusTone = 'placeholder', caption, longDescription, wide = false } = Astro.props;
+---
+
+<figure class={`artifact-frame ${wide ? 'artifact-frame--wide' : ''}`}>
+  <div class="artifact-frame__status">
+    <StatusLabel label={status} tone={statusTone} />
+  </div>
+  <div class="artifact-frame__body">
+    <slot />
+  </div>
+  <figcaption class="artifact-frame__caption">{caption}</figcaption>
+  {longDescription && (
+    <details class="artifact-frame__longdesc">
+      <summary>Long description</summary>
+      <p>{longDescription}</p>
+    </details>
+  )}
+</figure>
+
+<style>
+  .artifact-frame {
+    margin: 0;
+    border: var(--border-thin);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    padding: var(--space-3);
+  }
+
+  .artifact-frame--wide {
+    max-width: var(--content-wide);
+    margin-inline: auto;
+  }
+
+  .artifact-frame__status {
+    margin-bottom: var(--space-2);
+  }
+
+  .artifact-frame__body {
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    min-height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3);
+  }
+
+  .artifact-frame__caption {
+    margin-top: var(--space-2);
+    font-size: var(--step-meta);
+    color: var(--color-text-secondary);
+    max-width: 68ch;
+  }
+
+  .artifact-frame__longdesc {
+    margin-top: var(--space-2);
+    font-size: var(--step-meta);
+  }
+
+  .artifact-frame__longdesc summary {
+    cursor: pointer;
+    color: var(--color-blue);
+    font-weight: 600;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .artifact-frame__longdesc p {
+    color: var(--color-text-secondary);
+    margin-top: var(--space-1);
+    max-width: 68ch;
+  }
+</style>

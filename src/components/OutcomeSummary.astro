@@ -1,0 +1,73 @@
+---
+interface Props {
+  verifiedLabel?: string;
+  verified: string;
+  unverifiedLabel?: string;
+  unverified: string;
+}
+
+const {
+  verifiedLabel = 'Verified',
+  verified,
+  unverifiedLabel = 'Not yet verified',
+  unverified,
+} = Astro.props;
+---
+
+<div class="outcome-summary" role="group" aria-label="Outcome summary">
+  <div class="outcome-summary__row outcome-summary__row--verified">
+    <p class="outcome-summary__tag">{verifiedLabel}</p>
+    <p class="outcome-summary__text">{verified}</p>
+  </div>
+  <div class="outcome-summary__row outcome-summary__row--unverified">
+    <p class="outcome-summary__tag">{unverifiedLabel}</p>
+    <p class="outcome-summary__text">{unverified}</p>
+  </div>
+</div>
+
+<style>
+  .outcome-summary {
+    display: grid;
+    gap: var(--space-2);
+    border: var(--border-thin);
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+    background: var(--color-surface);
+  }
+
+  .outcome-summary__row {
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+    gap: var(--space-2);
+    padding-block: var(--space-2);
+  }
+
+  .outcome-summary__row + .outcome-summary__row {
+    border-top: var(--border-thin);
+  }
+
+  .outcome-summary__tag {
+    font-weight: 700;
+    font-size: var(--step-meta);
+  }
+
+  .outcome-summary__row--verified .outcome-summary__tag {
+    color: var(--color-blue);
+  }
+
+  .outcome-summary__row--unverified .outcome-summary__tag {
+    color: var(--color-clay-strong);
+  }
+
+  .outcome-summary__text {
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  @media (max-width: 599px) {
+    .outcome-summary__row {
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+    }
+  }
+</style>

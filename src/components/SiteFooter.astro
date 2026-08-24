@@ -1,0 +1,81 @@
+---
+// Footer/contact CTA
+---
+
+<footer class="site-footer">
+  <div class="wrap site-footer__row">
+    <div class="site-footer__brand">
+      <p class="site-footer__name">Austin Todd — UX designer and strategist</p>
+      <p class="site-footer__tagline">Designed to make the work—and the decisions behind it—clear.</p>
+    </div>
+
+    <nav aria-label="Footer" class="site-footer__nav">
+      <ul class="site-footer__list">
+        <li><a href="/">Work</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li>
+          <!-- Placeholder: LinkedIn URL needed -->
+          <span class="site-footer__pending">LinkedIn (link pending)</span>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: var(--border-thin);
+    margin-top: var(--space-6);
+    padding-block: var(--space-4);
+  }
+
+  .site-footer__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .site-footer__name {
+    font-weight: 700;
+    margin-bottom: var(--space-1);
+  }
+
+  .site-footer__tagline {
+    color: var(--color-text-secondary);
+    font-size: var(--step-meta);
+    max-width: 32ch;
+  }
+
+  .site-footer__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .site-footer__list a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    text-decoration: underline;
+    color: var(--color-text);
+    font-size: var(--step-meta);
+  }
+
+  .site-footer__list a:hover {
+    color: var(--color-blue);
+  }
+
+  .site-footer__pending {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--color-text-secondary);
+    font-size: var(--step-meta);
+    font-style: italic;
+  }
+</style>

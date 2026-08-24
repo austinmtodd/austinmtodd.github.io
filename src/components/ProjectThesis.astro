@@ -1,0 +1,23 @@
+---
+interface Props {
+  as?: 'p' | 'blockquote';
+}
+const { as = 'p' } = Astro.props;
+const Tag = as;
+---
+
+<Tag class="project-thesis">
+  <slot />
+</Tag>
+
+<style>
+  .project-thesis {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: var(--step-subheading);
+    line-height: 1.5;
+    color: var(--color-text);
+    max-width: var(--content-reading);
+    margin: 0;
+  }
+</style>

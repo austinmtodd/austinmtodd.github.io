@@ -1,0 +1,62 @@
+:root {
+  /* Color tokens */
+  --color-bg: #F7F4EE;
+  --color-text: #171717;
+  --color-text-secondary: #55534F;
+  --color-surface: #FFFFFF;
+  --color-border: #D8D3C9;
+  --color-blue: #174E87;
+  --color-clay: #B85C3F;
+  --color-blue-field: #E4EEF7;
+  --color-clay-field: #F2E4DE;
+
+  /* Clay is decorative-only at small sizes (contrast ~4.1:1 on --color-bg,
+     below AA for normal text). Use --color-clay-strong wherever clay-toned
+     text needs to pass AA at any size. */
+  --color-clay-strong: #8C4630;
+
+  --color-focus: #174E87;
+
+  /* Type */
+  --font-sans: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+
+  --step-body: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
+  --step-meta: clamp(0.875rem, 0.85rem + 0.1vw, 1rem);
+  --step-subheading: clamp(1.375rem, 1.25rem + 0.5vw, 1.625rem);
+  --step-section: clamp(1.875rem, 1.6rem + 1.2vw, 2.5rem);
+  --step-case-title: clamp(2.75rem, 2.1rem + 3vw, 4rem);
+  --step-hero: clamp(3rem, 2.1rem + 4vw, 4.75rem);
+
+  --content-max: 1360px;
+  --content-reading: 720px;
+  --content-wide: 1240px;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6rem;
+  --space-7: 8.5rem;
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+
+  --border-thin: 1px solid var(--color-border);
+
+  --focus-ring: 3px solid var(--color-focus);
+  --focus-offset: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    --transition-fast: 120ms ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+  }
+}

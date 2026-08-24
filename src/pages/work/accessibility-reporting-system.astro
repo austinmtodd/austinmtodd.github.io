@@ -1,0 +1,436 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectMetadata from '../../components/ProjectMetadata.astro';
+import ProjectThesis from '../../components/ProjectThesis.astro';
+import CaseStudyNav from '../../components/CaseStudyNav.astro';
+import ArtifactFrame from '../../components/ArtifactFrame.astro';
+import Placeholder from '../../components/Placeholder.astro';
+import Callout from '../../components/Callout.astro';
+import EvidenceLimitation from '../../components/EvidenceLimitation.astro';
+import OutcomeSummary from '../../components/OutcomeSummary.astro';
+import PrevNext from '../../components/PrevNext.astro';
+
+const sections = [
+  { id: 'situation', label: 'The situation' },
+  { id: 'responsibility', label: 'My responsibility' },
+  { id: 'decision-1', label: 'One underlying model' },
+  { id: 'decision-2', label: 'Audience-specific views' },
+  { id: 'decision-3', label: 'Standardize, then automate' },
+  { id: 'monitoring', label: 'Sustainable monitoring' },
+  { id: 'changed', label: 'What changed' },
+  { id: 'reflection', label: 'Reflection' },
+];
+---
+
+<BaseLayout
+  title="UX Reporting and Systems Design Case Study — Austin Todd"
+  description="How Austin Todd designed a centralized reporting system for team action, leadership visibility, automation, and sustainable monitoring."
+>
+  <article>
+    <header class="wrap case-opening">
+      <div class="col-reading">
+        <p class="case-opening__eyebrow">Case study 03 · Information and systems design</p>
+        <h1 class="case-opening__title">Designing a shared view of accessibility progress</h1>
+        <ProjectThesis>
+          I turned recurring accessibility reporting into a centralized system designed for both
+          team action and leadership visibility.
+        </ProjectThesis>
+      </div>
+    </header>
+
+    <div class="wrap">
+      <ProjectMetadata
+        items={[
+          { label: 'Role', value: 'Reporting-system designer and owner' },
+          { label: 'Outcome', value: 'Centralized tracking, audience-specific views, refined automation, and a foundation for sustainable monitoring' },
+          { label: 'Primary capability', value: 'Information and systems design' },
+          { label: 'Tools', value: 'Airtable and Axe Monitor' },
+          { label: 'Timeframe', value: '[ADD EXACT TIMEFRAME]' },
+        ]}
+      />
+    </div>
+
+    <div class="wrap case-body">
+      <div class="col-reading">
+        <CaseStudyNav sections={sections} />
+      </div>
+
+      <section id="situation" class="col-reading case-section" aria-labelledby="situation-heading">
+        <h2 id="situation-heading" class="case-section__heading">The situation</h2>
+        <p>
+          Mouser's accessibility work generated information through audits, product-team activity,
+          and monitoring. But reporting that information consistently required ongoing
+          organization and translation.
+        </p>
+        <p>
+          Product teams needed enough specificity to act. Leadership needed a clearer view of
+          progress. Repeatedly assembling separate reports for those audiences made accessibility
+          performance more difficult to understand and the reporting process difficult to sustain.
+        </p>
+        <p>The problem was not simply that the organization needed a new dashboard.</p>
+        <p>
+          It needed one reporting structure that could support different decisions without
+          requiring the underlying story to be manually recreated each time.
+        </p>
+      </section>
+
+      <section id="responsibility" class="col-reading case-section" aria-labelledby="responsibility-heading">
+        <h2 id="responsibility-heading" class="case-section__heading">My responsibility</h2>
+        <p>I designed and maintained a centralized reporting system in Airtable.</p>
+        <p>I was responsible for:</p>
+        <ul class="case-list">
+          <li>Organizing the underlying accessibility information</li>
+          <li>Creating views suited to different audiences</li>
+          <li>Producing leadership-ready reporting</li>
+          <li>Refining automations that connected teams to their metrics</li>
+          <li>Reducing dependence on ad hoc reporting</li>
+          <li>Helping move the organization toward more sustainable monitoring with Axe Monitor</li>
+        </ul>
+        <p>
+          My manager later identified the dashboard, its leadership-ready views, and the continued
+          refinement of its automation as key achievements.
+        </p>
+      </section>
+
+      <div class="col-wide case-artifact">
+        <ArtifactFrame
+          status="Conceptual illustration"
+          statusTone="placeholder"
+          caption="Conceptual reconstruction showing one shared information model feeding both team and leadership views. Not an original artifact."
+        >
+          <div class="diagram">
+            <div class="diagram__node diagram__node--source">Shared information model</div>
+            <div class="diagram__connector" aria-hidden="true"></div>
+            <ul class="diagram__row">
+              <li class="diagram__node">Team view</li>
+              <li class="diagram__node">Leadership view</li>
+            </ul>
+          </div>
+        </ArtifactFrame>
+      </div>
+
+      <section id="decision-1" class="col-reading case-section" aria-labelledby="decision-1-heading">
+        <h2 id="decision-1-heading" class="case-section__heading">
+          Decision 1: Create one underlying model rather than disconnected reports
+        </h2>
+        <p>
+          The first decision was to treat reports as views into a shared system—not as separate
+          deliverables.
+        </p>
+        <p>
+          If every request produced another independently maintained report, differences in
+          structure and timing could make it difficult to determine which representation was
+          current or authoritative.
+        </p>
+        <p>Centralizing the information created a common foundation for:</p>
+        <ul class="case-list">
+          <li>Tracking accessibility work</li>
+          <li>Organizing information by team</li>
+          <li>Viewing status and progress</li>
+          <li>Creating leadership summaries</li>
+          <li>Connecting teams to relevant metrics</li>
+          <li>Supporting future automation</li>
+        </ul>
+        <p>
+          The dashboard was the visible layer. The more durable design work was the information
+          structure underneath it.
+        </p>
+      </section>
+
+      <div class="col-wide case-artifact">
+        <ArtifactFrame
+          status="Placeholder: source artifact needed"
+          statusTone="placeholder"
+          caption="Sanitized underlying information model. No fields are invented — a placeholder stands in until the authentic structure is supplied."
+        >
+          <Placeholder>
+            Sanitized information-model diagram pending. Fields and relationships will be added
+            once the authentic structure is supplied — nothing is invented in the meantime.
+          </Placeholder>
+        </ArtifactFrame>
+      </div>
+
+      <section id="decision-2" class="col-reading case-section" aria-labelledby="decision-2-heading">
+        <h2 id="decision-2-heading" class="case-section__heading">
+          Decision 2: Design views around the decision each audience needed to make
+        </h2>
+        <p>Teams and leaders interacted with accessibility information at different levels.</p>
+        <p>
+          A team needed information close enough to the work to understand where attention was
+          required. Leadership needed a more summarized representation that made progress and
+          broader patterns visible.
+        </p>
+        <p>Using the same detail for both would either:</p>
+        <ul class="case-list">
+          <li>Give leadership more implementation detail than it could use, or</li>
+          <li>Give teams summaries too broad to support action.</li>
+        </ul>
+        <p>
+          I created audience-specific views connected to the same underlying information. This
+          allowed detail and summary to coexist without separating them into competing reporting
+          systems.
+        </p>
+      </section>
+
+      <div class="col-reading">
+        <Callout>Start with the decision, then determine the level of information the audience needs.</Callout>
+      </div>
+
+      <div class="col-wide case-artifact case-artifact--pair">
+        <ArtifactFrame
+          status="Placeholder: source artifact needed"
+          statusTone="placeholder"
+          caption="Sanitized team view. No fake Airtable screenshots — a visible placeholder stands in until an authentic sanitized view is supplied."
+        >
+          <Placeholder>Sanitized team view pending.</Placeholder>
+        </ArtifactFrame>
+        <ArtifactFrame
+          status="Placeholder: source artifact needed"
+          statusTone="placeholder"
+          caption="Sanitized leadership view. No fake Airtable screenshots — a visible placeholder stands in until an authentic sanitized view is supplied."
+        >
+          <Placeholder>Sanitized leadership view pending.</Placeholder>
+        </ArtifactFrame>
+      </div>
+
+      <section id="decision-3" class="col-reading case-section" aria-labelledby="decision-3-heading">
+        <h2 id="decision-3-heading" class="case-section__heading">Decision 3: Standardize before automating</h2>
+        <p>
+          The long-term goal was to reduce manual reporting, but automating an inconsistent
+          process would only reproduce its inconsistencies faster.
+        </p>
+        <p>
+          I first needed enough structure in the information to make repeated reporting
+          dependable. From there, I refined automations that connected teams to their
+          accessibility metrics and reduced recurring manual effort.
+        </p>
+        <p>
+          The system did not eliminate every manual step. My subsequent goals continued to call
+          for retiring ad hoc processes and standardizing additional data.
+        </p>
+        <p>This demonstrates the difference between:</p>
+        <ul class="case-list">
+          <li>Creating an initial dashboard</li>
+          <li>Establishing a reliable reporting capability</li>
+          <li>Continuing to improve that capability as organizational needs mature</li>
+        </ul>
+      </section>
+
+      <div class="col-wide case-artifact">
+        <ArtifactFrame
+          status="Placeholder: source artifact needed"
+          statusTone="placeholder"
+          caption="Authentic automation flow. Triggers and actions will not be specified until Austin supplies them."
+        >
+          <Placeholder>Automation flow pending — no triggers or actions invented in the meantime.</Placeholder>
+        </ArtifactFrame>
+      </div>
+
+      <section id="monitoring" class="col-reading case-section" aria-labelledby="monitoring-heading">
+        <h2 id="monitoring-heading" class="case-section__heading">
+          Extending the system toward sustainable monitoring
+        </h2>
+        <p>
+          Periodic audits provide useful snapshots, but they cannot independently show how
+          accessibility changes over time.
+        </p>
+        <p>
+          I also worked to establish Axe Monitor and align its reporting with business value. This
+          supported a broader shift from isolated audits toward continuous visibility.
+        </p>
+        <p>The intended system relationship was:</p>
+        <ol class="case-list case-list--ordered">
+          <li>Monitoring and accessibility work generate information.</li>
+          <li>The reporting model organizes and translates it.</li>
+          <li>Audience-specific views make it understandable.</li>
+          <li>Teams and leaders use it to identify where attention is needed.</li>
+        </ol>
+        <p>
+          The fourth step is essential. More monitoring data does not automatically create better
+          decisions. The reporting system must connect information to an audience, an owner, and a
+          recurring decision.
+        </p>
+      </section>
+
+      <div class="col-reading">
+        <EvidenceLimitation heading="Needs verification">
+          <p>Verify exact Axe Monitor relationship before finalizing this section.</p>
+        </EvidenceLimitation>
+      </div>
+
+      <section id="changed" class="col-reading case-section" aria-labelledby="changed-heading">
+        <h2 id="changed-heading" class="case-section__heading">What changed</h2>
+        <p>The work produced a centralized accessibility-reporting capability with:</p>
+        <ul class="case-list">
+          <li>Leadership-ready views</li>
+          <li>Information that teams could use to understand their metrics</li>
+          <li>Greater visibility into progress</li>
+          <li>Refined automation supporting recurring reporting</li>
+          <li>A foundation for more sustainable monitoring</li>
+        </ul>
+        <p>This replaced a more ad hoc approach with a system that could be maintained and extended.</p>
+      </section>
+
+      <div class="col-reading case-outcome">
+        <OutcomeSummary
+          verified="Centralized tracking, leadership-ready views, team-facing information, and refined automation."
+          unverified="Usage frequency, quantified time savings, faster remediation, changed product decisions, or improved customer accessibility."
+        />
+      </div>
+
+      <section id="reflection" class="col-reading case-section case-section--reflection" aria-labelledby="reflection-heading">
+        <h2 id="reflection-heading" class="case-section__heading">Reflection</h2>
+        <ProjectThesis>
+          This project taught me to distinguish a dashboard from a decision system.
+        </ProjectThesis>
+        <p>
+          A dashboard displays information. A decision system is designed around who needs the
+          information, what they are trying to understand, what action they can take, how
+          frequently the decision occurs, and who owns what happens next.
+        </p>
+        <p>
+          My contribution was not simply implementing Airtable. It was creating a shared
+          information structure that made accessibility progress more visible and could support
+          different organizational decisions without rebuilding the reporting process for every
+          audience.
+        </p>
+      </section>
+    </div>
+
+    <div class="wrap">
+      <PrevNext
+        prev={{
+          label: 'Previous case study',
+          title: 'Making UX impact measurable',
+          href: '/work/ux-measurement-framework',
+        }}
+      />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .case-opening {
+    padding-block: var(--space-6) var(--space-4);
+  }
+
+  .case-opening__eyebrow {
+    font-size: var(--step-meta);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-blue);
+    margin-bottom: var(--space-3);
+  }
+
+  .case-opening__title {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: var(--step-case-title);
+    line-height: 1.1;
+    margin-bottom: var(--space-4);
+  }
+
+  .case-body {
+    padding-top: var(--space-5);
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .case-section {
+    display: grid;
+    gap: var(--space-3);
+    color: var(--color-text);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+
+  .case-section > p,
+  .case-section > ul,
+  .case-section > ol {
+    color: var(--color-text-secondary);
+  }
+
+  .case-section__heading {
+    font-size: var(--step-section);
+    color: var(--color-text);
+    margin-bottom: var(--space-1);
+  }
+
+  .case-section--reflection .case-section__heading {
+    font-family: var(--font-serif);
+  }
+
+  .case-list {
+    list-style: disc;
+    padding-left: 1.4em;
+    display: grid;
+    gap: 0.5em;
+  }
+
+  .case-list--ordered {
+    list-style: decimal;
+  }
+
+  .case-artifact,
+  .case-outcome {
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .case-artifact--pair {
+    max-width: var(--content-wide);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  .case-artifact--pair :global(.artifact-frame--wide) {
+    max-width: none;
+  }
+
+  @media (max-width: 767px) {
+    .case-artifact--pair {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    width: 100%;
+  }
+
+  .diagram__row {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2);
+  }
+
+  .diagram__node {
+    border: var(--border-thin);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    padding: 0.6em 0.9em;
+    font-size: var(--step-meta);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .diagram__node--source {
+    background: var(--color-text);
+    color: var(--color-bg);
+    border-color: var(--color-text);
+  }
+
+  .diagram__connector {
+    width: 1px;
+    height: var(--space-3);
+    background: var(--color-border);
+  }
+</style>

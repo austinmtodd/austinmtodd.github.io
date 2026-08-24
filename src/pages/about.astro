@@ -1,0 +1,245 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+// Headshot or intentional no-photo decision: [TODO] not yet confirmed by Austin.
+// Building text-only for now rather than fabricating or sourcing a photo.
+---
+
+<BaseLayout
+  title="About — Austin Todd"
+  description="Austin Todd is a UX designer and strategist based in the Dallas–Fort Worth area, working across UX strategy, accessibility governance, measurement, and organizational alignment."
+>
+  <section class="wrap about-hero">
+    <div class="col-reading">
+      <p class="about-hero__eyebrow">About</p>
+      <h1 class="about-hero__headline">
+        I'm most useful when the problem matters but the path forward is not yet clear.
+      </h1>
+      <div class="about-hero__copy">
+        <p>
+          I'm Austin Todd, a UX designer and strategist based in the Dallas–Fort Worth area.
+        </p>
+        <p>
+          I help teams make sense of complex problems: identifying what is actually preventing
+          progress, bringing together the people who understand different parts of the system, and
+          creating structures that move the work toward decisions.
+        </p>
+        <p>
+          My professional background is in UX design and accessibility. I earned a BFA in
+          Communication Design with a concentration in UX Design from the University of North
+          Texas, then joined Mouser Electronics, where I progressed from UX Designer to UX
+          Accessibility Designer II.
+        </p>
+        <p>Accessibility became an unexpectedly broad strategic education.</p>
+        <p>
+          It required me to think about individual interfaces, but also about the organizational
+          systems that determine whether accessible experiences are consistently delivered:
+          standards, responsibilities, workflows, measurement, tooling, training, priorities, and
+          governance.
+        </p>
+        <p>
+          Over time, my role expanded from identifying accessibility issues to helping the
+          organization answer larger questions:
+        </p>
+        <ul class="about-hero__list">
+          <li>How should teams share responsibility for experience quality?</li>
+          <li>How do we translate broad commitments into workable expectations?</li>
+          <li>What evidence helps teams and leaders understand progress?</li>
+          <li>How should UX demonstrate its contribution to product and business outcomes?</li>
+          <li>How do we make decisions when no single person owns the complete answer?</li>
+        </ul>
+        <p>That is the work I want to continue doing.</p>
+        <p>
+          I'm not trying to leave accessibility behind. It remains an important part of how I
+          understand quality, inclusion, and organizational responsibility. But I want to apply the
+          strategic capabilities I developed through that work to a wider range of product and
+          experience problems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap contribute" aria-labelledby="contribute-heading">
+    <h2 id="contribute-heading" class="contribute__heading">How I contribute</h2>
+    <div class="contribute__grid">
+      <div class="contribute__item">
+        <h3>I notice structural problems</h3>
+        <p>
+          I often recognize when repeated confusion, manual effort, or stakeholder disagreement
+          points to a missing system rather than an isolated execution issue.
+        </p>
+      </div>
+      <div class="contribute__item">
+        <h3>I make ambiguity discussable</h3>
+        <p>
+          I translate broad concerns into specific questions, decisions, and tradeoffs so people
+          can respond to something concrete.
+        </p>
+      </div>
+      <div class="contribute__item">
+        <h3>I connect perspectives</h3>
+        <p>
+          I work across UX, research, development, QA, product, leadership, and subject-matter
+          experts. I do not need everyone to begin with the same perspective, but I do need the
+          process to make their reasoning visible.
+        </p>
+      </div>
+      <div class="contribute__item">
+        <h3>I leave behind structure</h3>
+        <p>
+          My work often results in frameworks, standards, reporting systems, decision tools, or
+          governance models that help teams continue operating after the initial engagement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap outside" aria-labelledby="outside-heading">
+    <div class="col-reading">
+      <h2 id="outside-heading" class="outside__heading">Outside work</h2>
+      <p class="outside__copy">
+        Outside UX, I'm interested in art museums, utilitarian ceramics, movies, plants, cooking,
+        and spending time outdoors. I'm drawn to things that are thoughtfully made, quietly
+        functional, and improved through attention to detail—which probably explains a lot about
+        how I approach design too.
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap looking-for" aria-labelledby="looking-for-heading">
+    <div class="col-reading">
+      <h2 id="looking-for-heading" class="looking-for__heading">What I'm looking for</h2>
+      <div class="looking-for__copy">
+        <p>
+          I'm interested in UX Strategist, Experience Strategist, Design Strategist, Service
+          Designer, and systems-oriented UX roles.
+        </p>
+        <p>
+          I'm especially interested in teams working on complex products or organizational
+          problems where research, facilitation, measurement, and systems thinking are valued
+          alongside design execution.
+        </p>
+      </div>
+      <div class="looking-for__links">
+        <a href="/">View my work</a>
+        <a href="/resume">View resume</a>
+        <a href="/contact">Contact me</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-hero {
+    padding-block: var(--space-6) var(--space-5);
+  }
+
+  .about-hero__eyebrow {
+    font-size: var(--step-meta);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-blue);
+    margin-bottom: var(--space-3);
+  }
+
+  .about-hero__headline {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: var(--step-case-title);
+    line-height: 1.15;
+    margin-bottom: var(--space-4);
+  }
+
+  .about-hero__copy {
+    display: grid;
+    gap: var(--space-3);
+    font-size: 1.0625rem;
+    color: var(--color-text-secondary);
+  }
+
+  .about-hero__copy p {
+    max-width: 68ch;
+  }
+
+  .about-hero__list {
+    list-style: disc;
+    padding-left: 1.4em;
+    display: grid;
+    gap: var(--space-1);
+    max-width: 60ch;
+  }
+
+  .contribute {
+    padding-block: var(--space-6);
+    border-top: var(--border-thin);
+  }
+
+  .contribute__heading {
+    font-family: var(--font-serif);
+    font-size: var(--step-section);
+    margin-bottom: var(--space-4);
+  }
+
+  .contribute__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-4);
+  }
+
+  .contribute__item h3 {
+    font-size: 1.1875rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .contribute__item p {
+    color: var(--color-text-secondary);
+  }
+
+  .outside,
+  .looking-for {
+    padding-block: var(--space-5);
+    border-top: var(--border-thin);
+  }
+
+  .outside__heading,
+  .looking-for__heading {
+    font-family: var(--font-serif);
+    font-size: var(--step-section);
+    margin-bottom: var(--space-3);
+  }
+
+  .outside__copy {
+    color: var(--color-text-secondary);
+    font-size: 1.0625rem;
+  }
+
+  .looking-for__copy {
+    display: grid;
+    gap: var(--space-2);
+    color: var(--color-text-secondary);
+    font-size: 1.0625rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .looking-for__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .looking-for__links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-inline: var(--space-3);
+    border: 1px solid var(--color-blue);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--color-blue);
+  }
+
+  .looking-for__links a:hover {
+    background: var(--color-blue-field);
+  }
+</style>

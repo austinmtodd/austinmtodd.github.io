@@ -1,0 +1,351 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ProjectFeature from '../components/ProjectFeature.astro';
+import ArtifactFrame from '../components/ArtifactFrame.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+---
+
+<BaseLayout
+  title="Austin Todd — UX Designer and Strategist"
+  description="UX designer and strategist focused on ambiguous problems, experience measurement, cross-functional alignment, accessibility, and scalable systems."
+>
+  <Hero eyebrow="Austin Todd — UX designer and strategist">
+    <Fragment slot="headline">I turn ambiguous UX problems into systems teams can act on.</Fragment>
+    <Fragment slot="copy">
+      <p>
+        I help organizations frame complex problems, align people around decisions, and build
+        practical paths from intention to implementation.
+      </p>
+      <p>
+        My work spans experience measurement, organizational standards, accessibility, reporting,
+        facilitation, and cross-functional decision-making.
+      </p>
+    </Fragment>
+    <Fragment slot="actions">
+      <a class="btn btn--primary" href="#selected-work">View selected work</a>
+      <a class="btn btn--secondary" href="/about">About me</a>
+      <a class="btn btn--tertiary" href="/resume">View resume</a>
+    </Fragment>
+  </Hero>
+
+  <section id="selected-work" class="wrap section-intro" aria-labelledby="selected-work-heading">
+    <h2 id="selected-work-heading" class="section-intro__heading">Selected work</h2>
+    <p class="section-intro__copy">
+      Three projects showing how I frame ambiguity, create alignment, and design systems that
+      help teams make and implement decisions.
+    </p>
+  </section>
+
+  <div class="wrap">
+    <ProjectFeature
+      number="01"
+      title="Turning an accessibility commitment into published standards"
+      href="/work/published-accessibility-standards"
+      contribution="Problem framing · Workshop design · Facilitation · Decision systems · Governance"
+      outcome="Published organizational standards supported by clearer responsibilities and operating structures"
+      cta="Read the standards case study"
+    >
+      <Fragment slot="description">
+        <p>
+          Mouser needed more than accessibility requirements. Product teams needed shared
+          decisions about testing, ownership, evidence, escalation, and exceptions.
+        </p>
+        <p>
+          I helped structure and facilitate a cross-functional initiative that moved those
+          questions toward a governance model and published organizational standards.
+        </p>
+      </Fragment>
+      <Fragment slot="artifact">
+        <ArtifactFrame
+          status="Conceptual illustration"
+          statusTone="placeholder"
+          caption="Conceptual reconstruction of the shift from a broad accessibility commitment to an operating model with defined ownership, testing, decisions, escalation, and exceptions. Not an original deliverable."
+        >
+          <div class="diagram diagram--standards">
+            <div class="diagram__node diagram__node--source">Broad commitment</div>
+            <div class="diagram__connector" aria-hidden="true"></div>
+            <ul class="diagram__row">
+              <li class="diagram__node">Ownership</li>
+              <li class="diagram__node">Testing</li>
+              <li class="diagram__node">Decisions</li>
+              <li class="diagram__node">Escalation</li>
+              <li class="diagram__node">Exceptions</li>
+            </ul>
+            <p class="diagram__label">Operating model</p>
+          </div>
+        </ArtifactFrame>
+      </Fragment>
+    </ProjectFeature>
+
+    <ProjectFeature
+      number="02"
+      title="Making UX impact measurable"
+      href="/work/ux-measurement-framework"
+      contribution="Measurement strategy · Evidence evaluation · Framework development · Leadership communication"
+      outcome="Strategic proposal and phased pilot recommendation presented to UX leadership"
+      cta="Read the UX metrics case study"
+      reverse
+    >
+      <Fragment slot="description">
+        <p>
+          UX influenced important product journeys, but the organization lacked a consistent way
+          to understand and communicate experience quality.
+        </p>
+        <p>
+          Working with a senior UX researcher, I helped develop a measurement framework connecting
+          satisfaction, perceived effort, task success, behavioral performance, and business
+          outcomes.
+        </p>
+      </Fragment>
+      <Fragment slot="artifact">
+        <ArtifactFrame
+          status="Anonymized reconstruction"
+          statusTone="placeholder"
+          caption="Anonymized reconstruction of the proposed measurement framework: three experience signals related to two business outcomes. No Mouser branding or internal values."
+        >
+          <div class="diagram diagram--metrics">
+            <ul class="diagram__row">
+              <li class="diagram__node diagram__node--blue">Satisfaction</li>
+              <li class="diagram__node diagram__node--blue">Perceived effort</li>
+              <li class="diagram__node diagram__node--blue">Task success</li>
+            </ul>
+            <div class="diagram__connector" aria-hidden="true"></div>
+            <ul class="diagram__row">
+              <li class="diagram__node diagram__node--clay">Conversion rate</li>
+              <li class="diagram__node diagram__node--clay">Transaction value</li>
+            </ul>
+          </div>
+        </ArtifactFrame>
+      </Fragment>
+    </ProjectFeature>
+
+    <ProjectFeature
+      number="03"
+      title="Designing a shared view of accessibility progress"
+      href="/work/accessibility-reporting-system"
+      contribution="Information architecture · Audience-specific reporting · Systems design · Continuous improvement"
+      outcome="Centralized reporting with improved visibility and a more scalable structure"
+      cta="Read the reporting case study"
+    >
+      <Fragment slot="description">
+        <p>
+          Accessibility information existed, but teams and leaders needed different ways to
+          understand and act on it.
+        </p>
+        <p>
+          I designed a centralized reporting system that connected one underlying information
+          structure to team-facing metrics, leadership-ready views, automation, and sustainable
+          monitoring.
+        </p>
+      </Fragment>
+      <Fragment slot="artifact">
+        <ArtifactFrame
+          status="Conceptual illustration"
+          statusTone="placeholder"
+          caption="Conceptual reconstruction showing one shared information model feeding both team and leadership views. Not an original artifact."
+        >
+          <div class="diagram diagram--reporting">
+            <div class="diagram__node diagram__node--source">Shared information model</div>
+            <div class="diagram__connector" aria-hidden="true"></div>
+            <ul class="diagram__row">
+              <li class="diagram__node">Team view</li>
+              <li class="diagram__node">Leadership view</li>
+            </ul>
+          </div>
+        </ArtifactFrame>
+      </Fragment>
+    </ProjectFeature>
+  </div>
+
+  <section class="wrap principles" aria-labelledby="principles-heading">
+    <h2 id="principles-heading" class="principles__heading">How I work</h2>
+    <div class="principles__grid">
+      <div class="principles__item">
+        <h3>Frame the real problem</h3>
+        <p>
+          The first request is rarely the complete problem. I look for the unclear decisions,
+          competing needs, missing evidence, and organizational constraints underneath it.
+        </p>
+      </div>
+      <div class="principles__item">
+        <h3>Create the conditions for alignment</h3>
+        <p>
+          I give people a structured way to contribute, disagree, and decide. That might mean a
+          workshop, framework, decision tracker, or clearer model of ownership.
+        </p>
+      </div>
+      <div class="principles__item">
+        <h3>Make progress sustainable</h3>
+        <p>
+          I look beyond the immediate deliverable. My goal is to leave behind a system, practice,
+          or shared understanding that helps teams continue moving without recreating the work
+          each time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap transition" aria-labelledby="transition-heading">
+    <div class="col-reading">
+      <h2 id="transition-heading" class="transition__heading">My path into strategy</h2>
+      <div class="transition__copy">
+        <p>
+          I began in UX design and developed deep expertise in accessibility. That work placed me
+          inside problems that extended well beyond compliance: product quality, measurement, team
+          responsibilities, governance, prioritization, and organizational change.
+        </p>
+        <p>
+          I found that my strongest contribution often came before the final artifact—making sense
+          of an unclear situation, identifying the decisions that mattered, and designing a
+          workable way forward.
+        </p>
+        <p>Now I'm looking to apply that approach to broader UX and product challenges.</p>
+      </div>
+      <a class="transition__cta" href="/about">More about me</a>
+    </div>
+  </section>
+
+  <ContactCTA heading="Let's talk">
+    <p>
+      I'm interested in UX and design-strategy roles involving complex systems, discovery,
+      measurement, and cross-functional decision-making.
+    </p>
+    <Fragment slot="links">
+      <li><!-- Placeholder: email needed --><span class="contact-cta__pending">Email me (address pending)</span></li>
+      <li><!-- Placeholder: LinkedIn URL needed --><span class="contact-cta__pending">Connect on LinkedIn (link pending)</span></li>
+      <li><a href="/resume">View resume</a></li>
+    </Fragment>
+  </ContactCTA>
+</BaseLayout>
+
+<style>
+  .section-intro {
+    padding-top: var(--space-6);
+  }
+
+  .section-intro__heading {
+    font-family: var(--font-serif);
+    font-size: var(--step-section);
+    margin-bottom: var(--space-2);
+  }
+
+  .section-intro__copy {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    max-width: var(--content-reading);
+  }
+
+  .principles {
+    padding-block: var(--space-6);
+    border-top: var(--border-thin);
+    margin-top: var(--space-5);
+  }
+
+  .principles__heading {
+    font-family: var(--font-serif);
+    font-size: var(--step-section);
+    margin-bottom: var(--space-4);
+  }
+
+  .principles__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-4);
+  }
+
+  .principles__item h3 {
+    font-size: 1.1875rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .principles__item p {
+    color: var(--color-text-secondary);
+  }
+
+  .transition {
+    padding-block: var(--space-6);
+    border-top: var(--border-thin);
+  }
+
+  .transition__heading {
+    font-family: var(--font-serif);
+    font-size: var(--step-section);
+    margin-bottom: var(--space-3);
+  }
+
+  .transition__copy {
+    display: grid;
+    gap: var(--space-2);
+    font-size: 1.0625rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-3);
+  }
+
+  .transition__cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-weight: 600;
+    color: var(--color-blue);
+    text-decoration: underline;
+  }
+
+  /* Conceptual diagrams: plain HTML/CSS, real text (no text-in-image),
+     decorative connectors only, no arrows implying causality. */
+  .diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    width: 100%;
+  }
+
+  .diagram__row {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2);
+  }
+
+  .diagram__node {
+    border: var(--border-thin);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    padding: 0.6em 0.9em;
+    font-size: var(--step-meta);
+    font-weight: 600;
+    color: var(--color-text);
+    text-align: center;
+  }
+
+  .diagram__node--source {
+    background: var(--color-text);
+    color: var(--color-bg);
+    border-color: var(--color-text);
+  }
+
+  .diagram__node--blue {
+    background: var(--color-blue-field);
+    border-color: var(--color-blue);
+    color: var(--color-blue);
+  }
+
+  .diagram__node--clay {
+    background: var(--color-clay-field);
+    border-color: var(--color-clay-strong);
+    color: var(--color-clay-strong);
+  }
+
+  .diagram__connector {
+    width: 1px;
+    height: var(--space-3);
+    background: var(--color-border);
+  }
+
+  .diagram__label {
+    font-size: var(--step-meta);
+    color: var(--color-text-secondary);
+  }
+</style>

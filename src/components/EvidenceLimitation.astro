@@ -1,0 +1,42 @@
+---
+interface Props {
+  heading?: string;
+}
+const { heading = 'Evidence limitation' } = Astro.props;
+---
+
+<aside class="evidence-limitation" aria-label={heading}>
+  <p class="evidence-limitation__heading">{heading}</p>
+  <div class="evidence-limitation__body">
+    <slot />
+  </div>
+</aside>
+
+<style>
+  .evidence-limitation {
+    border: var(--border-thin);
+    border-left: 4px solid var(--color-clay-strong);
+    border-radius: var(--radius-sm);
+    background: var(--color-clay-field);
+    padding: var(--space-3);
+    max-width: var(--content-reading);
+  }
+
+  .evidence-limitation__heading {
+    font-size: var(--step-meta);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-clay-strong);
+    margin-bottom: var(--space-1);
+  }
+
+  .evidence-limitation__body {
+    color: var(--color-text);
+    font-size: var(--step-meta);
+  }
+
+  .evidence-limitation__body :global(p + p) {
+    margin-top: var(--space-2);
+  }
+</style>

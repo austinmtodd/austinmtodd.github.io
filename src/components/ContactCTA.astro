@@ -1,0 +1,78 @@
+---
+interface Props {
+  heading: string;
+}
+const { heading } = Astro.props;
+---
+
+<section class="contact-cta" aria-labelledby="contact-cta-heading">
+  <div class="wrap col-reading">
+    <h2 id="contact-cta-heading" class="contact-cta__heading">{heading}</h2>
+    <div class="contact-cta__copy">
+      <slot />
+    </div>
+    <ul class="contact-cta__links">
+      <slot name="links" />
+    </ul>
+  </div>
+</section>
+
+<style>
+  .contact-cta {
+    background: var(--color-blue-field);
+    padding-block: var(--space-6);
+    margin-top: var(--space-6);
+  }
+
+  .contact-cta__heading {
+    font-family: var(--font-serif);
+    font-size: var(--step-section);
+    margin-bottom: var(--space-3);
+  }
+
+  .contact-cta__copy {
+    font-size: 1.125rem;
+    color: var(--color-text);
+    max-width: 60ch;
+    display: grid;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+  }
+
+  .contact-cta__links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .contact-cta__links :global(a) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-inline: var(--space-3);
+    border: 1px solid var(--color-blue);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--color-blue);
+    background: var(--color-surface);
+  }
+
+  .contact-cta__links :global(a:hover) {
+    background: var(--color-blue);
+    color: var(--color-surface);
+  }
+
+  .contact-cta__links :global(.contact-cta__pending) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-inline: var(--space-3);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-secondary);
+    font-style: italic;
+    background: transparent;
+  }
+</style>

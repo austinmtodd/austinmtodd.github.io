@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact — Austin Todd"
+  description="Get in touch with Austin Todd about UX and design-strategy opportunities involving complex systems, discovery, measurement, and cross-functional decision-making."
+>
+  <section class="wrap contact-page">
+    <div class="col-reading">
+      <h1 class="contact-page__heading">Let's talk</h1>
+      <div class="contact-page__copy">
+        <p>
+          I'm interested in UX and design-strategy opportunities involving complex systems,
+          discovery, measurement, facilitation, and cross-functional decision-making.
+        </p>
+        <p>
+          If you're working on an important experience problem that does not yet have a clear
+          path forward, I'd like to hear about it.
+        </p>
+      </div>
+
+      <dl class="contact-page__links">
+        <div class="contact-page__row">
+          <dt>Email</dt>
+          <!-- Placeholder: Austin's email address needed -->
+          <dd class="contact-page__pending">Address pending</dd>
+        </div>
+        <div class="contact-page__row">
+          <dt>LinkedIn</dt>
+          <!-- Placeholder: LinkedIn URL needed -->
+          <dd class="contact-page__pending">Link pending</dd>
+        </div>
+        <div class="contact-page__row">
+          <dt>Resume</dt>
+          <dd><a href="/resume">View resume</a></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-page {
+    padding-block: var(--space-6);
+  }
+
+  .contact-page__heading {
+    font-family: var(--font-serif);
+    font-size: var(--step-case-title);
+    margin-bottom: var(--space-4);
+  }
+
+  .contact-page__copy {
+    display: grid;
+    gap: var(--space-2);
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-5);
+    max-width: 62ch;
+  }
+
+  .contact-page__links {
+    display: grid;
+    gap: var(--space-2);
+    border-top: var(--border-thin);
+    padding-top: var(--space-4);
+  }
+
+  .contact-page__row {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: var(--space-2);
+    align-items: baseline;
+  }
+
+  .contact-page__row dt {
+    font-weight: 700;
+    font-size: var(--step-meta);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-secondary);
+  }
+
+  .contact-page__row dd {
+    margin: 0;
+  }
+
+  .contact-page__row a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--color-blue);
+    font-weight: 600;
+  }
+
+  .contact-page__pending {
+    color: var(--color-text-secondary);
+    font-style: italic;
+  }
+
+  @media (max-width: 479px) {
+    .contact-page__row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

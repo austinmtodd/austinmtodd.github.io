@@ -1,0 +1,101 @@
+---
+interface Props {
+  eyebrow: string;
+}
+const { eyebrow } = Astro.props;
+---
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero__inner">
+      <p class="hero__eyebrow">{eyebrow}</p>
+      <h1 class="hero__headline"><slot name="headline" /></h1>
+      <div class="hero__copy">
+        <slot name="copy" />
+      </div>
+      <div class="hero__actions">
+        <slot name="actions" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-block: var(--space-6) var(--space-5);
+  }
+
+  .hero__inner {
+    max-width: 900px;
+  }
+
+  .hero__eyebrow {
+    font-size: var(--step-meta);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-blue);
+    margin-bottom: var(--space-3);
+  }
+
+  .hero__headline {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: var(--step-hero);
+    line-height: 1.08;
+    margin-bottom: var(--space-4);
+    max-width: 18ch;
+  }
+
+  .hero__copy {
+    display: grid;
+    gap: var(--space-2);
+    font-size: 1.1875rem;
+    color: var(--color-text-secondary);
+    max-width: var(--content-reading);
+    margin-bottom: var(--space-4);
+  }
+
+  .hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .hero__actions :global(.btn) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 48px;
+    padding-inline: var(--space-3);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .hero__actions :global(.btn--primary) {
+    background: var(--color-blue);
+    color: var(--color-surface);
+    border: 1px solid var(--color-blue);
+  }
+
+  .hero__actions :global(.btn--primary:hover) {
+    background: #123e6c;
+  }
+
+  .hero__actions :global(.btn--secondary) {
+    background: transparent;
+    color: var(--color-blue);
+    border: 1px solid var(--color-blue);
+  }
+
+  .hero__actions :global(.btn--secondary:hover) {
+    background: var(--color-blue-field);
+  }
+
+  .hero__actions :global(.btn--tertiary) {
+    color: var(--color-text);
+    text-decoration: underline;
+    min-height: 44px;
+  }
+</style>

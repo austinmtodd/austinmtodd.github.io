@@ -1,0 +1,65 @@
+---
+// Consistent visible status labels for artifacts and decision records.
+// Never conveys meaning by color alone — text is always present.
+type Tone = 'verified' | 'progress' | 'placeholder' | 'neutral';
+
+interface Props {
+  label: string;
+  tone?: Tone;
+}
+
+const { label, tone = 'neutral' } = Astro.props;
+---
+
+<span class={`status-label status-label--${tone}`}>
+  <span class="status-label__dot" aria-hidden="true"></span>
+  {label}
+</span>
+
+<style>
+  .status-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    font-family: var(--font-sans);
+    font-size: var(--step-meta);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    padding: 0.25em 0.75em;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+    line-height: 1.4;
+  }
+
+  .status-label__dot {
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+  }
+
+  .status-label--verified {
+    background: var(--color-blue-field);
+    border-color: var(--color-blue);
+    color: var(--color-blue);
+  }
+
+  .status-label--progress {
+    background: var(--color-clay-field);
+    border-color: var(--color-clay-strong);
+    color: var(--color-clay-strong);
+  }
+
+  .status-label--placeholder {
+    background: transparent;
+    border-style: dashed;
+    color: var(--color-text-secondary);
+  }
+
+  .status-label--neutral {
+    color: var(--color-text-secondary);
+  }
+</style>

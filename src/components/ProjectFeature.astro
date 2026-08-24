@@ -1,0 +1,131 @@
+---
+interface Props {
+  number: string;
+  title: string;
+  href: string;
+  contribution: string;
+  outcome: string;
+  cta: string;
+  reverse?: boolean;
+}
+
+const { number, title, href, contribution, outcome, cta, reverse = false } = Astro.props;
+---
+
+<article class={`project-feature ${reverse ? 'project-feature--reverse' : ''}`}>
+  <div class="project-feature__text">
+    <p class="project-feature__number" aria-hidden="true">{number}</p>
+    <h3 class="project-feature__title">
+      <a href={href}>{title}</a>
+    </h3>
+    <div class="project-feature__description">
+      <slot name="description" />
+    </div>
+    <p class="project-feature__contribution"><span>Contribution</span> {contribution}</p>
+    <p class="project-feature__outcome"><span>Outcome</span> {outcome}</p>
+    <a href={href} class="project-feature__cta">{cta}</a>
+  </div>
+  <div class="project-feature__artifact">
+    <slot name="artifact" />
+  </div>
+</article>
+
+<style>
+  .project-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-5);
+    align-items: center;
+    padding-block: var(--space-5);
+    border-top: var(--border-thin);
+  }
+
+  .project-feature--reverse {
+    grid-template-areas: 'artifact text';
+  }
+
+  .project-feature--reverse .project-feature__text {
+    grid-area: text;
+  }
+
+  .project-feature--reverse .project-feature__artifact {
+    grid-area: artifact;
+  }
+
+  .project-feature__number {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-2);
+  }
+
+  .project-feature__title {
+    font-size: var(--step-section);
+    margin-bottom: var(--space-3);
+    line-height: 1.2;
+  }
+
+  .project-feature__title a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .project-feature__title a:hover {
+    color: var(--color-blue);
+  }
+
+  .project-feature__description {
+    display: grid;
+    gap: var(--space-2);
+    color: var(--color-text-secondary);
+    font-size: 1.0625rem;
+    margin-bottom: var(--space-3);
+    max-width: 56ch;
+  }
+
+  .project-feature__contribution,
+  .project-feature__outcome {
+    font-size: var(--step-meta);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-1);
+  }
+
+  .project-feature__contribution span,
+  .project-feature__outcome span {
+    font-weight: 700;
+    color: var(--color-text);
+    margin-right: 0.5em;
+  }
+
+  .project-feature__outcome {
+    margin-bottom: var(--space-3);
+  }
+
+  .project-feature__cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-weight: 600;
+    color: var(--color-blue);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 899px) {
+    .project-feature,
+    .project-feature--reverse {
+      grid-template-columns: 1fr;
+      grid-template-areas: none;
+    }
+
+    .project-feature__text,
+    .project-feature__artifact,
+    .project-feature--reverse .project-feature__text,
+    .project-feature--reverse .project-feature__artifact {
+      grid-area: auto;
+    }
+
+    .project-feature__artifact {
+      order: -1;
+    }
+  }
+</style>

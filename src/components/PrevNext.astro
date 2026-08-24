@@ -1,0 +1,84 @@
+---
+interface LinkItem {
+  label: string;
+  title: string;
+  href: string;
+}
+
+interface Props {
+  prev?: LinkItem;
+  next?: LinkItem;
+}
+
+const { prev, next } = Astro.props;
+---
+
+<nav aria-label="More case studies" class="prev-next">
+  {prev ? (
+    <a class="prev-next__link prev-next__link--prev" href={prev.href}>
+      <span class="prev-next__eyebrow">← {prev.label}</span>
+      <span class="prev-next__title">{prev.title}</span>
+    </a>
+  ) : <span></span>}
+  {next ? (
+    <a class="prev-next__link prev-next__link--next" href={next.href}>
+      <span class="prev-next__eyebrow">{next.label} →</span>
+      <span class="prev-next__title">{next.title}</span>
+    </a>
+  ) : <span></span>}
+</nav>
+
+<style>
+  .prev-next {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+    border-top: var(--border-thin);
+    padding-top: var(--space-4);
+  }
+
+  .prev-next__link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35em;
+    text-decoration: none;
+    padding: var(--space-3);
+    border: var(--border-thin);
+    border-radius: var(--radius-md);
+    min-height: 44px;
+  }
+
+  .prev-next__link:hover {
+    border-color: var(--color-blue);
+  }
+
+  .prev-next__link--next {
+    text-align: right;
+    align-items: flex-end;
+  }
+
+  .prev-next__eyebrow {
+    font-size: var(--step-meta);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-secondary);
+  }
+
+  .prev-next__title {
+    font-weight: 700;
+    color: var(--color-text);
+    font-size: 1.0625rem;
+  }
+
+  @media (max-width: 599px) {
+    .prev-next {
+      grid-template-columns: 1fr;
+    }
+
+    .prev-next__link--next {
+      text-align: left;
+      align-items: flex-start;
+    }
+  }
+</style>

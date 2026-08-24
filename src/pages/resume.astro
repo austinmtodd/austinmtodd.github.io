@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Resume — Austin Todd"
+  description="Resume summary for Austin Todd, UX designer and strategist. Downloadable resume pending."
+>
+  <section class="wrap resume-page">
+    <div class="col-reading">
+      <p class="resume-page__eyebrow">Resume</p>
+      <h1 class="resume-page__heading">Resume</h1>
+
+      <p class="resume-page__summary">
+        UX designer and strategist experienced in turning ambiguous, cross-functional problems
+        into measurable frameworks, shared standards, and scalable systems. Skilled in problem
+        framing, facilitation, governance, information architecture, accessibility strategy, UX
+        measurement, and stakeholder communication. Proven ability to connect specialist knowledge
+        with product workflows and leadership priorities.
+      </p>
+
+      <div class="resume-page__pending">
+        <p class="resume-page__pending-label">Placeholder: source artifact needed</p>
+        <p>
+          A downloadable resume (PDF) is not yet linked here. <!-- TODO: ADD FINAL RESUME FILE OR URL -->
+        </p>
+      </div>
+
+      <p class="resume-page__note">
+        For role history, dates, and credentials, get in touch directly — see the
+        <a href="/contact">contact page</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .resume-page {
+    padding-block: var(--space-6);
+  }
+
+  .resume-page__eyebrow {
+    font-size: var(--step-meta);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-blue);
+    margin-bottom: var(--space-2);
+  }
+
+  .resume-page__heading {
+    font-family: var(--font-serif);
+    font-size: var(--step-section);
+    margin-bottom: var(--space-4);
+  }
+
+  .resume-page__summary {
+    font-size: 1.0625rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-4);
+    max-width: 68ch;
+  }
+
+  .resume-page__pending {
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+
+  .resume-page__pending-label {
+    font-size: var(--step-meta);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-1);
+  }
+
+  .resume-page__note {
+    font-size: var(--step-meta);
+    color: var(--color-text-secondary);
+  }
+
+  .resume-page__note a {
+    color: var(--color-blue);
+    font-weight: 600;
+  }
+</style>

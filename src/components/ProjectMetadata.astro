@@ -1,0 +1,48 @@
+---
+interface MetaItem {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  items: MetaItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<dl class="project-metadata">
+  {items.map((item) => (
+    <div class="project-metadata__item">
+      <dt>{item.label}</dt>
+      <dd>{item.value}</dd>
+    </div>
+  ))}
+</dl>
+
+<style>
+  .project-metadata {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-3) var(--space-4);
+    border-top: var(--border-thin);
+    border-bottom: var(--border-thin);
+    padding-block: var(--space-3);
+  }
+
+  .project-metadata__item dt {
+    font-size: var(--step-meta);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.35em;
+  }
+
+  .project-metadata__item dd {
+    margin: 0;
+    font-size: var(--step-meta);
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+</style>

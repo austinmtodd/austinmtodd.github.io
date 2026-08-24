@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://austinmtodd.github.io/sitemap.xml
