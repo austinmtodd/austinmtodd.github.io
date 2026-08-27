@@ -35,6 +35,9 @@ const sections = [
           I helped a cross-functional group define how accessibility would be governed, tested,
           documented, and escalated across product teams.
         </ProjectThesis>
+        <p class="case-tldr"><strong>TL;DR</strong> — Teams had no shared model for accessibility
+          ownership, testing, or exceptions. I ran the workshops and decision system that turned
+          that gap into published, governed standards.</p>
       </div>
     </header>
 
@@ -417,6 +420,19 @@ const sections = [
     font-size: var(--step-case-title);
     line-height: 1.1;
     margin-bottom: var(--space-4);
+  }
+
+  .case-tldr {
+    margin-top: var(--space-3);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    max-width: var(--content-reading);
+  }
+
+  .case-tldr strong {
+    color: var(--color-blue);
+    letter-spacing: 0.02em;
   }
 
   .case-body {

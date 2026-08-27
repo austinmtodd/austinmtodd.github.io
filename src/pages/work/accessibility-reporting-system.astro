@@ -36,6 +36,9 @@ const sections = [
           I turned recurring accessibility reporting into a centralized system designed for both
           team action and leadership visibility.
         </ProjectThesis>
+        <p class="case-tldr"><strong>TL;DR</strong> — Every accessibility report was rebuilt from
+          scratch for its audience. I designed one underlying model that now feeds both team and
+          leadership views.</p>
       </div>
     </header>
 
@@ -347,6 +350,19 @@ const sections = [
     font-size: var(--step-case-title);
     line-height: 1.1;
     margin-bottom: var(--space-4);
+  }
+
+  .case-tldr {
+    margin-top: var(--space-3);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    max-width: var(--content-reading);
+  }
+
+  .case-tldr strong {
+    color: var(--color-blue);
+    letter-spacing: 0.02em;
   }
 
   .case-body {
